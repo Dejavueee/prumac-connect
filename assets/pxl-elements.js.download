@@ -1,0 +1,1036 @@
+( function( $ ) {
+     
+    $( window ).on( 'elementor/frontend/init', function() {
+        gsap.registerPlugin(ScrollTrigger); 
+        if ($(window).width() > 992) {
+            apexus_parallax_effect(); 
+        }
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/container', function( $scope ) {
+            apexus_animation_handler($scope);
+        } );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/container', pxl_waypoint_animated );   
+        
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_counter.default', pxl_counter );   
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_counter_list.default', pxl_counter_list );  
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_button.default', apexus_button_hover );  
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_accordion.default', function( $scope ) {
+            apexus_accordion_handler($scope);
+        } ); 
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_tabs.default', function( $scope ) {
+            apexus_tabs_handler($scope);
+        } );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_logo_marquee.default', function( $scope ) {
+            apexus_logo_marquee($scope);
+            apexus_logo_marquee2($scope);
+        } );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_services_list.default', function($scope) {
+            apexus_services2_handler($scope);
+        });
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_services_scroll.default', function( $scope ) {
+            apexus_services_scroll($scope);
+        } );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_fancy_box_carousel.default', function( $scope ) {
+            apexus_fancybox3_handler($scope);
+        } ); 
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_counter_list.default', function( $scope ) {
+            apexus_active_handler($scope);
+        } );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_fancy_box.default', function( $scope ) {
+            apexus_mouse_move_fancybox($scope);
+        } ); 
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_testimonial_list.default', function( $scope ) {
+            apexus_testimonial_handler($scope);
+        } ); 
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_process_accordion.default', function( $scope ) {
+            apexus_ProcessAccordion_Handle($scope);
+        } ); 
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/container', function( $scope ) {
+            apexus_hover_effect_button($scope);
+        } );
+    } );
+
+    // $(document.body).on('pxl_effect_refreshed', function(e, $scope) {
+    //     if (typeof pxl_waypoint_animated === 'function') {
+    //         pxl_waypoint_animated($scope, jQuery);
+    //     }
+    // });
+
+   var pxl_waypoint_animated = ($scope, $) => {
+        $scope.find(".pxl-animated-waypoint").each(function () {
+            var $el = $(this);
+            if ($el.data('waypoint-attached')) return;
+            $el.data('waypoint-attached', true);
+
+            new Waypoint({
+                element: $el[0],
+                handler: function (direction) {
+                    if (direction === "down") {
+                        $el.addClass("active");
+                        this.destroy();
+                    }
+                },
+                offset: "80%",
+            });
+        });
+    };
+    var pxl_counter = ( $scope, $ ) => { 
+
+        var _selector = $scope.find( ".counter-number-value"),
+            _data = _selector.data(),
+            _settings = {
+                scrollTrigger: {
+                    trigger: _selector[0],    
+                    markers: false,                        
+                    toggleActions: "play none none none", //play none none reset , 
+                    start: "top 90%", 
+                    // once: true
+                    //end: "bottom bottom"     
+                },
+                duration: _data.duration, 
+                ease: "power3.out",
+                textContent: _data.start,
+                snap : {
+                    textContent: 1
+                }
+            };
+
+        var enable = _data.separatorEnable;
+        var delim  = _data.delimiter; 
+        if (enable === 'no') {
+        } 
+        else {
+            if (delim === '.') {
+                _settings.modifiers = {
+                    textContent: v => formatNumber(v, 1)
+                };
+            } else {
+                _settings.modifiers = {
+                    textContent: v => formatNumber(v, 0)
+                };
+            }
+        }
+
+        gsap.from( _selector[0], _settings);
+
+        function formatNumber(value, decimals) {
+            let s = (+value).toLocaleString('en-US').split(".");
+            return decimals ? s[0] + "." + ((s[1] || "") + "00000000").substr(0, decimals) : s[0];
+        }
+
+    };
+
+    var pxl_counter_list = ($scope, $) => {
+
+        var $items = $scope.find(".pxl-counter-list .counter-number-value");
+
+        $items.each(function () {
+
+            var el = this,
+                $el = $(this),
+                data = $el.data();
+
+            var settings = {
+                scrollTrigger: {
+                    trigger: el,
+                    markers: false,
+                    toggleActions: "play none none none",
+                    start: "top 90%"
+                },
+                duration: data.duration,
+                ease: "power3.out",
+                textContent: data.start,
+                snap: { textContent: 1 }
+            };
+
+            if (data.delimiter === "yes") {
+                settings.modifiers = {
+                    textContent: value => formatNumber(value, 3)
+                };
+            }
+
+            gsap.from(el, settings);
+        });
+
+        function formatNumber(value, decimals) {
+            let s = (+value).toLocaleString('en-US').split(".");
+            return decimals
+                ? s[0] + "." + ((s[1] || "") + "00000000").substr(0, decimals)
+                : s[0];
+        }
+    };
+
+    var apexus_button_hover = () =>{
+        $( '.btn-eighth').each( function(){
+            var button_width = $( this).outerWidth();
+            $( this).css( '--btn-eighth-width', button_width+'px');
+        });
+        $( '.btn-eighth')
+        .on('mouseenter', function(e) {
+                var parentOffset = $(this).offset(),
+                relX = e.pageX - parentOffset.left,
+                relY = e.pageY - parentOffset.top;
+                $(this).find('.su-button-effect').css({top: relY, left: relX});
+        })
+        .on('mouseout', function(e) {
+                var parentOffset = $(this).offset(),
+                relX = e.pageX - parentOffset.left,
+                relY = e.pageY - parentOffset.top;
+            $(this).find('.su-button-effect').css({top: relY, left: relX});
+        });
+    }
+    
+
+    function apexus_accordion_handler($scope){
+        $scope.find(".pxl-accordion .ac-title").on("click", function(e){
+            e.preventDefault();
+
+            var target = $(this).closest('.ac-item').data("target");
+            var parent = $(this).closest(".pxl-accordion");
+            var active_items = parent.find(".ac-item.active");
+            $.each(active_items, function (index, item) {
+                var item_target = $(item).data("target");
+                if(item_target != target){
+                    $(item).removeClass("active");
+                    $(item_target).slideUp(400);
+                }
+            });
+            $(this).closest('.ac-item').toggleClass("active");
+            $(target).slideToggle(400);
+        });
+    }
+
+    function apexus_animation_handler( $scope ) {
+        elementorFrontend.waypoint($scope.find('.pxl-draw-from-top'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-draw-from-left'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-draw-from-right'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-move-from-left'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-move-from-right'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        }); 
+        elementorFrontend.waypoint($scope.find('.pxl-skew-in'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-skew-in-right'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-zoom-in'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-zoom-out'), function () {
+            if( $(this).closest('.pxl-slider-item').length > 0 ) return;
+            var $el = $(this),
+                data = $el.data('setting-custom');
+             
+            if(typeof data != 'undefined'){
+                setTimeout(function () {
+                    $el.addClass('pxl-animated');
+                }, data['custom_animation_delay']);
+            }else{
+                $el.addClass('pxl-animated');
+            }
+        });
+
+        elementorFrontend.waypoint($scope.find('.pxl-border-animated'), function () {
+            $(this).addClass('pxl-animated');
+        });
+
+        elementorFrontend.waypoint($scope.find('.elementor-widget-divider'), function () {
+            $(this).addClass('pxl-animated');
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-divider.animated'), function () {
+            $(this).addClass('pxl-animated');
+        }); 
+        elementorFrontend.waypoint($scope.find('.pxl-bd-anm'), function () {
+            $(this).addClass('pxl-animated');
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-hd-bd-left'), function () {  
+            $(this).addClass('pxl-animated');
+        });
+        elementorFrontend.waypoint($scope.find('.pxl-hd-bd-right'), function () {
+            $(this).addClass('pxl-animated');
+        });
+
+    }
+
+    function apexus_tabs_handler($scope){
+        $scope.find(".pxl-tabs .tabs-title .tab-title").on("click", function(e){
+            e.preventDefault();
+            var target = $(this).data("target");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(target).addClass('active').siblings().removeClass('active'); 
+
+            $(target).siblings().find('.pxl-animate').each(function(){
+                var data = $(this).data('settings');
+                $(this).removeClass('animated '+data['animation']).addClass('pxl-invisible');
+            });
+            $(target).find('.pxl-animate').each(function(){
+                var data = $(this).data('settings');
+                var cur_anm = $(this);
+                setTimeout(function () {  
+                    $(cur_anm).removeClass('pxl-invisible').addClass('animated ' + data['animation']);
+                }, data['animation_delay']);
+
+            });
+        });
+       
+        $scope.find(".pxl-tabs .tabs-content .tab-title-ct").on("click", function(e){
+            e.preventDefault();
+            var target = $(this).closest('.tab-content').attr("id");
+            $(this).closest('.pxl-tabs').find('.tab-title').each(function(index, el) {
+                var this_target = $(el).data('target');
+                if( this_target == '#'+target ){
+                    $(el).addClass('active');
+                }else{
+                    $(el).removeClass('active');
+                }
+            });
+
+            if($(this).closest('.tab-content').hasClass('active')){
+                $(this).closest('.tab-content').removeClass("active");
+                $(this).next('.content-inner').slideUp(400);
+            }else{
+                $(this).closest('.tab-content').siblings('.active').removeClass("active").find('.content-inner').slideUp(400);
+                $(this).closest('.tab-content').addClass("active");
+                $(this).next('.content-inner').slideDown(400);
+            }
+            
+        });
+
+    }
+
+    function apexus_logo_marquee($scope){
+
+        const text_marquee = $scope.find('.pxl-item--marquee');
+        if (!text_marquee || text_marquee.length === 0) {
+            return;
+        }
+        const boxes = gsap.utils.toArray(text_marquee);
+
+        const speedAttr = text_marquee[0].getAttribute('data-speed');
+        const speed = parseFloat(speedAttr) || 1;
+
+        const slipTypeAttr = text_marquee[0].getAttribute('data-slip-type');
+        const isReversed = slipTypeAttr === 'right';
+
+        const loop = text_horizontalLoop(boxes, {
+            paused: false,
+            repeat: -1,
+            speed: speed,
+            reversed: isReversed
+        });
+
+        function text_horizontalLoop(items, config) {
+            items = gsap.utils.toArray(items);
+            config = config || {};
+            let tl = gsap.timeline({repeat: config.repeat, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
+            length = items.length,
+            startX = items[0].offsetLeft,
+            times = [],
+            widths = [],
+            xPercents = [],
+            curIndex = 0,
+            pixelsPerSecond = (config.speed || 1) * 100,
+            snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1),
+            totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+            gsap.set(items, {
+                xPercent: (i, el) => {
+                    let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+                    xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
+                    return xPercents[i];
+                }
+            });
+            gsap.set(items, {x: 0});
+            totalWidth = items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+            for (i = 0; i < length; i++) {
+                item = items[i];
+                curX = xPercents[i] / 100 * widths[i];
+                distanceToStart = item.offsetLeft + curX - startX;
+                distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+                tl.to(item, {xPercent: snap((curX - distanceToLoop) / widths[i] * 100), duration: distanceToLoop / pixelsPerSecond}, 0)
+                .fromTo(item, {xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)}, {xPercent: xPercents[i], duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond, immediateRender: false}, distanceToLoop / pixelsPerSecond)
+                .add("label" + i, distanceToStart / pixelsPerSecond);
+                times[i] = distanceToStart / pixelsPerSecond;
+            }
+            function toIndex(index, vars) {
+                vars = vars || {};
+                (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length);
+                let newIndex = gsap.utils.wrap(0, length, index),
+                time = times[newIndex];
+                if (time > tl.time() !== index > curIndex) { 
+                    vars.modifiers = {time: gsap.utils.wrap(0, tl.duration())};
+                    time += tl.duration() * (index > curIndex ? 1 : -1);
+                }
+                curIndex = newIndex;
+                vars.overwrite = true;
+                return tl.tweenTo(time, vars);
+            }
+            tl.next = vars => toIndex(curIndex+1, vars);
+            tl.previous = vars => toIndex(curIndex-1, vars);
+            tl.current = () => curIndex;
+            tl.toIndex = (index, vars) => toIndex(index, vars);
+            tl.times = times;
+            tl.progress(1, true).progress(0, true);
+            if (config.reversed) {
+                tl.vars.onReverseComplete();
+                tl.reverse();
+            }
+            return tl;
+        }
+    }
+    
+    function apexus_logo_marquee2($scope) {
+        const scrollingText = $scope.find('.pxl-logo-active .box-image').toArray();
+        if (!scrollingText.length) return;
+
+        const firstItem = $scope.find('.pxl-logo-active .box-image').first();
+        const slipType = firstItem.data('slip-type');
+        const defaultDirection = slipType === 'right' ? -1 : 1;
+
+        const speedMultiplier = parseFloat(firstItem.data('speed')) || 1;
+
+        const tl = horizontalLoop(scrollingText, {
+            repeat: -1,
+            paddingRight: 30,
+            paused: false,
+            speed: speedMultiplier 
+        });
+
+        tl.timeScale(defaultDirection);
+
+        ScrollTrigger.create({
+            trigger: $scope[0],
+            start: "top bottom",
+            end: "bottom top",
+            onUpdate: self => {
+                if (self.direction === 1) {
+                    let factor = 1.8;
+                    gsap.timeline({ defaults: { ease: "none" } })
+                        .to(tl, { timeScale: defaultDirection * factor * 1.8, duration: 0.2, overwrite: true })
+                        .to(tl, { timeScale: defaultDirection * factor / 1.8, duration: 1 }, "+=0.3");
+                } else if (self.direction === -1) {
+                    tl.timeScale(-defaultDirection);
+                }
+            }
+        });
+
+        // ======================
+        // horizontalLoop helper
+        // ======================
+        function horizontalLoop(items, config) {
+            items = gsap.utils.toArray(items);
+            config = config || {};
+
+            let tl = gsap.timeline({
+                    repeat: config.repeat,
+                    paused: config.paused,
+                    defaults: { ease: "none" },
+                    onReverseComplete: () =>
+                        tl.totalTime(tl.rawTime() + tl.duration() * 100)
+                }),
+                length = items.length,
+                startX = items[0].offsetLeft,
+                times = [],
+                widths = [],
+                xPercents = [],
+                curIndex = 0,
+                pixelsPerSecond = (config.speed || 1) * 100,
+                snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1),
+                totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+
+            gsap.set(items, {
+                xPercent: (i, el) => {
+                    let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+                    xPercents[i] = snap(
+                        parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 +
+                        gsap.getProperty(el, "xPercent")
+                    );
+                    return xPercents[i];
+                }
+            });
+
+            gsap.set(items, { x: 0 });
+
+            totalWidth =
+                items[length - 1].offsetLeft +
+                xPercents[length - 1] / 100 * widths[length - 1] -
+                startX +
+                items[length - 1].offsetWidth *
+                gsap.getProperty(items[length - 1], "scaleX") +
+                (parseFloat(config.paddingRight) || 0);
+
+            for (i = 0; i < length; i++) {
+                item = items[i];
+                curX = xPercents[i] / 100 * widths[i];
+                distanceToStart = item.offsetLeft + curX - startX;
+                distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+
+                tl.to(item, {
+                    xPercent: snap((curX - distanceToLoop) / widths[i] * 100),
+                    duration: distanceToLoop / pixelsPerSecond
+                }, 0)
+                .fromTo(item,
+                    { xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100) },
+                    {
+                        xPercent: xPercents[i],
+                        duration: (totalWidth - distanceToLoop) / pixelsPerSecond,
+                        immediateRender: false
+                    },
+                    distanceToLoop / pixelsPerSecond
+                )
+                .add("label" + i, distanceToStart / pixelsPerSecond);
+
+                times[i] = distanceToStart / pixelsPerSecond;
+            }
+
+            function toIndex(index, vars) {
+                vars = vars || {};
+                if (Math.abs(index - curIndex) > length / 2) {
+                    index += index > curIndex ? -length : length;
+                }
+
+                let newIndex = gsap.utils.wrap(0, length, index),
+                    time = times[newIndex];
+
+                if (time > tl.time() !== index > curIndex) {
+                    vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
+                    time += tl.duration() * (index > curIndex ? 1 : -1);
+                }
+
+                curIndex = newIndex;
+                vars.overwrite = true;
+                return tl.tweenTo(time, vars);
+            }
+
+            tl.next = vars => toIndex(curIndex + 1, vars);
+            tl.previous = vars => toIndex(curIndex - 1, vars);
+            tl.current = () => curIndex;
+            tl.toIndex = (index, vars) => toIndex(index, vars);
+            tl.times = times;
+
+            if (config.reversed || defaultDirection === -1) {
+                tl.progress(1, true).progress(1, true);
+            } else {
+                tl.progress(0, true);
+            }
+
+            if (config.reversed) {
+                tl.vars.onReverseComplete();
+                tl.reverse();
+            }
+
+            return tl;
+        }
+    }
+
+
+
+
+    
+    function apexus_parallax_effect(){ 
+        if( $(document).find('.pxl-parallax-effect.mouse-move').length > 0 ){
+
+            setTimeout(function(){
+                $('.pxl-parallax-effect.mouse-move').each(function(index, el) {
+                    var $this = $(this);
+                    var $bound = 'undefined'; 
+                    
+                    if( $this.closest('.mouse-move-bound').length > 0 ){
+                        $bound = $this.closest('.mouse-move-bound');
+                    }
+                    if ( $(this).hasClass('bound-section') ){
+                        $bound = $this.closest('.elementor-element.e-parent');
+                    }
+                    if ( $(this).hasClass('bound-column') ){
+                        $bound = $this.closest('.elementor-element');
+                    }
+                    if ( $(this).hasClass('mouse-move-scope') ){
+                        $bound = $this.parents('.mouse-move-scope');
+                        if( $bound.length <= 0 )
+                            $bound = $this;
+                    }
+
+
+                    if( $bound != 'undefined' && $bound.length > 0 )
+                        apexus_parallax_effect_mousemove($this, $bound);
+                });
+            }, 600);
+        }
+    }
+    function apexus_parallax_effect_mousemove($this, $bound){  
+        
+        var rect = $bound[0].getBoundingClientRect();
+         
+        var mouse = {x: 0, y: 0, moved: false};
+        
+        $bound.on('hover', function(e) {
+                mouse.moved = true; 
+            }, function(e) {
+                mouse.moved = false;
+                gsap.to($this[0], {
+                    duration: 0.5,
+                    x: 0,
+                    y: 0,
+                });   
+            }
+        );
+
+        $bound.on( "mousemove", function( e ) {
+            mouse.moved = true;
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            gsap.to($this[0], {
+                duration: 0.5,
+                x: (mouse.x - rect.width / 2) / rect.width * -100,
+                y: (mouse.y - rect.height / 2) / rect.height * -100
+            });
+        });
+          
+        $(window).on('resize scroll', function(){
+            rect = $bound[0].getBoundingClientRect();
+        })
+ 
+    }
+
+    function apexus_services_scroll($scope) {
+        const $wrapper = $scope.find('.pxl-services-scroll');
+        if (!$wrapper.length) return;
+
+        const $itemsText  = $wrapper.find('.box-content .item-inner');
+        const $itemsImage = $wrapper.find('.item-img .item-image');
+
+        function setActive(index) {
+            $itemsText.removeClass('active').eq(index).addClass('active');
+            $itemsImage.removeClass('active').eq(index).addClass('active');
+        }
+        if (window.innerWidth > 1199) {
+            setActive(0);
+
+            $itemsText.each((i, el) => {
+                ScrollTrigger.create({
+                trigger: el,
+                start: 'center center',
+                end: 'bottom center',
+                onEnter: () => setActive(i),
+                onEnterBack: () => setActive(i),
+                });
+            });
+            } else {
+                $itemsText.on('click', function () {
+                    const index = $(this).index();
+                    setActive(index);
+                });
+
+            setActive(0);
+        }
+
+        ////////////////////////
+        if (window.innerWidth > 1199) {
+            const sections = gsap.utils.toArray('.pxl-services-scroll .row');
+
+            sections.forEach(section => {
+                const progressBar = section.querySelector('.box-content');
+                const items = progressBar.querySelectorAll('.item-inner');
+                const lastItem = items[items.length - 1];
+                const svgScroll = section.querySelector('.svg-scroll');
+
+                const sectionHeight = section.offsetHeight;
+                const barHeight = progressBar.scrollHeight;
+                const lastItemHeight = lastItem.offsetHeight;
+                const offsetFix = parseFloat($wrapper.attr('data-offset-fix')) || 202;
+                const scrollDistance = barHeight - (sectionHeight / 2 + lastItemHeight / 2) + offsetFix;
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                    trigger: section,
+                    start: "center center",
+                    end: () => "+=" + scrollDistance,
+                    pin: true,
+                    scrub: 1.2,
+                    markers: false,
+                    invalidateOnRefresh: true
+                    }
+                });
+
+                tl.to(progressBar, {
+                    y: -scrollDistance,
+                    ease: "none"
+                });
+                if (svgScroll) {
+                    gsap.to(svgScroll, {
+                    y: 300,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "center center",
+                        end: () => "+=" + scrollDistance,
+                        scrub: 1.2,
+                        markers: false,
+                        invalidateOnRefresh: true
+                    }
+                    });
+                }
+            });
+
+
+            gsap.utils.toArray('.item-inner').forEach(item => {
+                const progressBar = item.querySelector('.progress-bar');
+                if (!progressBar) return;
+                gsap.fromTo(progressBar, 
+                    {'--tab-progress': '0%'},
+                    {'--tab-progress': '100%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: 0,
+                        markers: false,
+                        toggleActions: 'play none none reverse'
+                    }
+                    }
+                );
+            });
+
+            //////////////////
+            const $wrapper2 = $scope.find('.pxl-services-scroll.layout-1');
+            if (!$wrapper2.length) return;
+
+            gsap.registerPlugin(ScrollTrigger, SplitText);
+
+            const elements = $wrapper2.find('.item-title, .item-description');
+
+            elements.each(function() {
+                let split = new SplitText(this, { type: "lines" });
+                split.lines.forEach(line => {
+                    gsap.to(line, {
+                        backgroundPosition: "0% 0%",
+                        ease: "power2.inOut",
+                        scrollTrigger: {
+                            trigger: line,
+                            start: "top center",
+                            end: "bottom center",
+                            scrub: 1,
+                            markers: false,
+                        },
+                    });
+                });
+
+                if ($(this).hasClass('item-title')) {
+                    const $icon = $(this).closest('.title-icon').find('i.pxli-Polygon');
+                    if ($icon.length && split.lines.length) {
+                        gsap.to($icon[0], {
+                            color: 'var(--primary-color)',
+                            ease: 'power2.inOut',
+                            scrollTrigger: {
+                                trigger: split.lines[0],
+                                start: "top center",
+                                end: "bottom center",
+                                scrub: 0.5,
+                                markers: false,
+                            },
+                        });
+                    }
+                }
+            });
+        }
+    }
+    function apexus_hover_effect_button() {
+        $('.btn-third, .btn-fifth').each(function () {
+            var textContainer = $(this).find('.pxl-button-text');
+            var text = textContainer.text().trim();
+            textContainer.html(text.split("").map(char =>
+                `<span class="letter">${char === " " ? "&nbsp;" : char}</span>`).join("")
+            );
+            var eltime = 0.045;
+            textContainer.find('.letter').each(function (index) {
+                $(this).css('animation-delay', (index * eltime) + 's');
+            });
+        });
+
+    }
+
+    function apexus_services2_handler($scope){
+        $scope.find(".pxl-services-list.layout-2 .title .item-inner, .pxl-services-list.layout-3 .title .item-inner, .pxl-services-list.layout-5 .title .item-inner").on("mouseenter", function(e){
+            e.preventDefault();
+            
+            var $list = $(this).closest('.pxl-services-list');
+            var target = $(this).data("target");
+            var id = target.replace('#', '');
+
+            $list.find('.title .item-inner').removeClass('active');
+            $list.find('.content .box-content').removeClass('active');
+            $list.find('.bg-image .image-full').removeClass('active');
+
+            $(this).addClass('active');
+            $list.find(target).addClass('active');
+            $list.find('.bg-image .image-full[data-id="'+id+'"]').addClass('active');
+        });
+
+        $scope.find(".pxl-services-list.layout-2 .content .box-content, .pxl-services-list.layout-3 .content .box-content, .pxl-services-list.layout-5 .content .box-content").on("click", function(e){
+            e.preventDefault();
+
+            var $list = $(this).closest('.pxl-services-list');
+            var id = $(this).attr('id');
+
+            $list.find('.title .item-inner').removeClass('active')
+                .filter('[data-target="#'+id+'"]').addClass('active');
+            $list.find('.content .box-content').removeClass('active');
+            $(this).addClass('active');
+            $list.find('.bg-image .image-full').removeClass('active')
+                .filter('[data-id="'+id+'"]').addClass('active');
+        });
+    }
+
+    function apexus_fancybox3_handler($scope){
+        $scope.find(".pxl-fancy-box-carousel.layout-3 .box-image .item-icon").on("click", function(e){
+            e.preventDefault();
+
+            var target = $(this).closest('.item-inner').data("target");
+            $(this).closest('.item-inner').toggleClass("active");
+            $(target).slideToggle(400);
+        });
+
+        var $carousel = $scope.find('.pxl-fancy-box-carousel.layout-6');
+        $carousel.find('.item-inner')
+            .on('mouseenter', function () {
+                var $this  = $(this);
+                var target = $this.data('target');
+
+                $this.addClass('active');
+                $carousel.find(target).stop(true, true).slideDown(400);
+            })
+            .on('mouseleave', function () {
+                var $this  = $(this);
+                var target = $this.data('target');
+
+                $this.removeClass('active');
+                $carousel.find(target).stop(true, true).slideUp(400);
+            });
+
+    }
+
+    function apexus_active_handler($scope){
+        $scope.find(".pxl-counter-list .item-inner").on("mouseenter", function(e){
+            e.preventDefault();
+            var target = $(this).data("target");
+            $(this).addClass('active').siblings().removeClass('active');
+            $(target).addClass('active').siblings().removeClass('active'); 
+        });
+    }
+
+
+    function apexus_mouse_move_fancybox($scope) {
+
+        const items = $scope[0].getElementsByClassName('mouse-move-fancy');
+        if (!items.length) return;
+
+        const getHoverDirection = function (event) {
+            var directions = ['top', 'right', 'bottom', 'left'];
+            var item = event.currentTarget;
+
+            var w = item.offsetWidth;
+            var h = item.offsetHeight;
+
+            var x = (event.clientX - item.getBoundingClientRect().left - (w / 2)) * (w > h ? (h / w) : 1);
+            var y = (event.clientY - item.getBoundingClientRect().top - (h / 2)) * (h > w ? (w / h) : 1);
+
+            var d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+
+            return directions[d];
+        };
+
+        [...items].forEach(function (item) {
+
+            ['mouseenter', 'mouseleave'].forEach(function (eventname) {
+
+                item.addEventListener(eventname, function (event) {
+
+                    var dir = getHoverDirection(event);
+
+                    item.classList.remove('top', 'right', 'bottom', 'left');
+                    item.classList.remove('mouseenter', 'mouseleave');
+
+                    item.classList.add(event.type);
+                    item.classList.add(dir);
+
+                }, false);
+
+            });
+
+        });
+
+    }
+
+    function apexus_testimonial_handler($scope){
+        $scope.find(".pxl-testimonial-list .title .box-content").on("mouseenter", function(e){
+            e.preventDefault();
+            
+            var $list = $(this).closest('.pxl-testimonial-list');
+            var target = $(this).data("target");
+            var id = target.replace('#', '');
+
+            $list.find('.title .box-content').removeClass('active');
+            $list.find('.content .item-inner').removeClass('active');
+
+            $(this).addClass('active');
+            $list.find(target).addClass('active');
+        });
+
+        $scope.find(".pxl-testimonial-list .content .item-inner").on("click", function(e){
+            e.preventDefault();
+
+            var $list = $(this).closest('.pxl-testimonial-list');
+            var id = $(this).attr('id');
+
+            $list.find('.title .box-content').removeClass('active')
+                .filter('[data-target="#'+id+'"]').addClass('active');
+            $list.find('.content .item-inner').removeClass('active');
+            $(this).addClass('active');
+        });
+    }
+
+    function apexus_ProcessAccordion_Handle($scope){
+        $scope.find( '.pxl-process-accordion-widget .process-item').hover( function(){
+
+            if( !$( this).hasClass( 'is-active')){
+
+                $scope.find( '.process-item.is-active').removeClass( 'is-active');
+
+                $( this).addClass( 'is-active');
+            }
+            
+        }); 
+
+        var accordion_widget = function(){
+
+            const breakpoint = window.matchMedia( '( min-width: 768px)' );
+
+            let mySwiper;
+
+
+            const breakpointChecker = function() {
+
+
+                if ( breakpoint.matches === true ) {
+
+                    if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
+
+                    return;
+
+                } else if ( breakpoint.matches === false ) {
+
+      
+                    return enableSwiper();
+                }
+
+            };
+
+            const enableSwiper = function() {
+                var carousel = $scope.find( '.pxl-process-accordion-widget');
+                mySwiper = new Swiper ( carousel[0], {
+                    spaceBetween: 20,
+                    loop: true,            
+                    slidesPerView: 1.2       
+                });
+
+            };
+
+            breakpoint.addListener( breakpointChecker);
+
+            breakpointChecker();
+        };
+
+        accordion_widget();
+    }
+
+
+} )( jQuery );
+ 
