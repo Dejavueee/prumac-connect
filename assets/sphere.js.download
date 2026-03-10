@@ -127,7 +127,7 @@
         if (!sphereEl.length) return;
         const size = parseInt(sphereEl.data("size")) || 400;
         const radius = parseInt(sphereEl.data("radius")) || size * 0.3;Math.PI
-        const sphereColor = sphereEl.data("color") || "#2458F6";
+        const sphereColor = sphereEl.data("color") || "#020261";
         const rotationType = sphereEl.data("rotation") || "y_axis";
         const rotationSpeed = parseFloat(sphereEl.data("speed")) || 0.005;
         const customXSpeed = parseFloat(sphereEl.data("xspeed")) || 0.003;
@@ -247,3 +247,4 @@
     elementorFrontend.hooks.addAction("frontend/element_ready/pxl_sphere.default", pxl_widget_sphere_handler2);
   });
 })(jQuery);
+

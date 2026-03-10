@@ -1308,36 +1308,189 @@
   white-space: nowrap;
 }
 
-@keyframes prumac-marquee {
+@keyframes prumacMarquee {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(calc(-1 * (100% / 2)), 0, 0);
   }
 }
 
-.pxl-logo-active {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  overflow: hidden;
-  gap: 60px;
+/* ===========================
+   PRUMAC LOGO MARQUEE — FINAL
+   - No grey fade / no tiles
+   - No border/outline
+   - True continuous loop
+   =========================== */
+
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-marquee1 {
+  position: relative !important;
+  overflow: hidden !important;
+  height: 70px !important;
+  display: block !important;
+  background: transparent !important;
 }
 
-.pxl-item--marquee {
+/* Kill ANY theme edge-fade / mask / overlay (this is your grey rectangle) */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-marquee1::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-marquee1::after,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .elementor-widget-container::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .elementor-widget-container::after,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-active::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-active::after {
+  content: "" !important;
+  display: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* The moving track (your HTML already has Set1 + Set2 inside ONE track) */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-active {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  width: max-content !important;
+  min-width: max-content !important;
+
+  gap: 0 !important;
+  /* IMPORTANT: remove flex-gap */
+  padding: 0 !important;
+  margin: 0 !important;
+
+  animation: prumacMarquee 10s linear infinite !important;
+  will-change: transform !important;
+}
+
+/* Replace gap with spacing that is consistent even at the loop boundary */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee {
   flex: 0 0 auto !important;
   width: auto !important;
   max-width: none !important;
+
+  padding-right: 18px !important;
+  /* spacing between logos */
+  margin: 0 !important;
+
+  /* Kill theme/JS inline transforms (this removes jumps) */
+  transform: none !important;
 }
 
-.pxl-item--inner {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 12px;
+/* Remove any “first item offset” some themes add */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee:first-child {
+  margin-left: 0 !important;
 }
 
-.pxl-text--logo {
-  white-space: nowrap !important;
+/* Remove any grey tile/background around logos */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--inner,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .item-image,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
 }
+
+/* Remove pseudo overlays inside items too */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--inner::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--inner::after,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .item-image::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .item-image::after,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee::before,
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Logo sizing */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .item-image img {
+  height: 42px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Seamless loop: move exactly half (because Set1 + Set2 are duplicated) */
+@keyframes prumacMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* reduce vertical spacing */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-marquee1 {
+  height: 55px !important;
+  /* was 70px */
+}
+
+/* slower speed */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-logo-active {
+  animation: prumacMarquee 22s linear infinite !important;
+  /* was 10s */
+}
+
+/* increase spacing between logos */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee {
+  padding-right: 60px !important;
+  /* was 18px */
+}
+
+/* reduce logo height slightly (helps vertical tightness) */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .item-image img {
+  height: 42px !important;
+  /* was 42px */
+}
+
+/* FIX loop-end spacing:
+   remove spacing after the LAST item so the seam has no extra gap */
+.elementor-1849 .elementor-element.elementor-element-e35bd6b .pxl-item--marquee:last-child {
+  padding-right: 0 !important;
+}
+
+/* Reduce height of mission section */
+.elementor-1849 .elementor-element.elementor-element-748038f {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  min-height: auto !important;
+}
+
+.elementor-1849 .elementor-element.elementor-element-748038f .elementor-widget-container {
+  padding: 0 !important;
+}
+
+/* Disable scroll animation effect */
+.elementor-1849 .elementor-element.elementor-element-748038f .pxl-heading-scroll-effect,
+.elementor-1849 .elementor-element.elementor-element-748038f .heading-text {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Force mission text to white */
+.elementor-1849 .elementor-element.elementor-element-748038f .heading-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.elementor-1849 .elementor-element.elementor-element-748038f {
+  padding: 30px 0 !important;
+}
+.pxl-scroll-top .pxl-icon::before, .pxl-scroll-top .pxl-icon::after { display: none !important; }
+.pxl-scroll-top .pxl-icon svg { transform: rotate(180deg); position: relative; top: -1px; width: 14px; height: 14px; margin: auto; display: block; }
+
+.pxl-scroll-top .pxl-icon svg { stroke: #ffffff !important; }

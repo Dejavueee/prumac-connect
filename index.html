@@ -421,19 +421,19 @@
 	<link rel="stylesheet" id="apexus-style-css" href="./assets/style(1).css" type="text/css" media="all">
 	<style id="apexus-style-inline-css" type="text/css">
 		:root {
-			--primary-color: #2458f6;
-			--second-color: #68758c;
+			--primary-color: #f91111;
+			--second-color: #020261;
 			--third-color: #68758c;
 			--body-color: #A3A3A3;
 			--heading-color: #0f1217;
-			--primary-color-rgb: 36, 88, 246;
-			--second-color-rgb: 104, 117, 140;
+			--primary-color-rgb: 249, 17, 17;
+			--second-color-rgb: 2, 2, 97;
 			--third-color-rgb: 104, 117, 140;
 			--body-color-rgb: 163, 163, 163;
 			--heading-color-rgb: 15, 18, 23;
 			--link-color: #0a0a0a;
-			--link-color-hover: #2458f6;
-			--link-color-active: #2458f6;
+			--link-color-hover: #f91111;
+			--link-color-active: #f91111;
 			--body-font-family: 'Outfit', sans-serif;
 			--body-font-size: 16px;
 			--body-font-weight: normal;
@@ -452,8 +452,53 @@
 			--heading-font-size-h4: 36px;
 			--heading-font-size-h5: 32px;
 			--heading-font-size-h6: 24px;
-			--logo-width: 116px;
+			--logo-width: 140px;
 			--logo-mobile_width: 110px;
+		}
+
+		.pxl-logo img {
+			max-width: 140px !important;
+			height: auto !important;
+		}
+
+		@media (max-width: 767px) {
+			.pxl-logo img {
+				max-width: 110px !important;
+			}
+		}
+
+		.pxl-primary-menu>li:hover>a .pxl-menu-title {
+			color: #f91111 !important;
+		}
+
+		.pxl-primary-menu>li:hover>a .pxl-menu-title:after {
+			background: #f91111 !important;
+		}
+
+		.pxl-primary-menu>li.active>a .pxl-menu-title {
+			color: #f91111 !important;
+		}
+
+		.pxl-primary-menu>li.active>a .pxl-menu-title:after {
+			background: #f91111 !important;
+		}
+
+		#pxl-footer a:hover {
+			color: #f91111 !important;
+		}
+
+		[data-id="06a75de"] {
+			background-color: #f91111 !important;
+			background-image: none !important;
+		}
+
+		[data-id="7ef9470"] {
+			display: none !important;
+		}
+
+		[data-id="8dcc37e"] .pxl-shape-wg {
+			background-color: transparent !important;
+			background-image: none !important;
 		}
 
 		/*# sourceURL=apexus-style-inline-css */
@@ -602,7 +647,7 @@
 									data-id="b6d47c4" data-element_type="widget" data-widget_type="pxl_logo.default">
 									<div class="elementor-widget-container">
 										<div class="pxl-logo d-flex-wrap align-items-center">
-											<a href="index.html"><img src="./assets/logo2.webp" alt="Apexus"></a>
+											<a href="index.html"><img src="./assets/logo-prumac.png" alt="Apexus"></a>
 										</div>
 									</div>
 								</div>
@@ -655,69 +700,26 @@
 													class="pxl-primary-menu clearfix">
 													<li id="menu-item-2698"
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2698">
-														<a href="https://demo.7iquid.com/apexus/"><span
+														<a href="index.html"><span
 																class="pxl-menu-title">Home.</span></a><span
 															class="main-menu-toggle"></span>
-														<ul class="sub-menu">
-															<li id="menu-item-2699"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2699">
-																<a href="https://demo.7iquid.com/apexus/"><span
-																		class="pxl-menu-title">Home 1</span></a>
-															</li>
-															<li id="menu-item-4224"
-																class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2761 current_page_item menu-item-4224">
-																<a href="https://demo.7iquid.com/apexus/home-2/"
-																	aria-current="page"><span
-																		class="pxl-menu-title">Home 2</span></a>
-															</li>
-															<li id="menu-item-4293"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4293">
-																<a href="https://demo.7iquid.com/apexus/home-3/"><span
-																		class="pxl-menu-title">Home 3</span></a>
-															</li>
-															<li id="menu-item-5562"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5562">
-																<a href="https://demo.7iquid.com/apexus/home-4/"><span
-																		class="pxl-menu-title">Home 4</span></a>
-															</li>
-															<li id="menu-item-6618"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6618">
-																<a href="https://demo.7iquid.com/apexus/home-5/"><span
-																		class="pxl-menu-title">Home 5</span></a>
-															</li>
-														</ul>
 													</li>
 													<li id="menu-item-2700"
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2700">
-														<a href="https://demo.7iquid.com/apexus/about-us/"
-															style="opacity: 1;"><span class="pxl-menu-title">About
+														<a href="About.html" style="opacity: 1;"><span
+																class="pxl-menu-title">About
 																Us.</span></a>
 													</li>
 													<li id="menu-item-2701"
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2701">
-														<a href="https://demo.7iquid.com/apexus/services-grid/"
-															style="opacity: 1;"><span
+														<a href="services.html" style="opacity: 1;"><span
 																class="pxl-menu-title">Services.</span></a><span
 															class="main-menu-toggle"></span>
-														<ul class="sub-menu">
-															<li id="menu-item-4295"
-																class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4295">
-																<a href="https://demo.7iquid.com/apexus/services-grid/"><span
-																		class="pxl-menu-title">Services Grid</span></a>
-															</li>
-															<li id="menu-item-4296"
-																class="menu-item menu-item-type-post_type menu-item-object-services menu-item-4296">
-																<a
-																	href="https://demo.7iquid.com/apexus/services/services-detail/"><span
-																		class="pxl-menu-title">Services
-																		Detail</span></a>
-															</li>
-														</ul>
+
 													</li>
 													<li id="menu-item-4300"
 														class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4300">
-														<a href="https://demo.7iquid.com/apexus/faqs/"
-															style="opacity: 1;"><span
+														<a href="faq.html" style="opacity: 1;"><span
 																class="pxl-menu-title">FAQs</span></a>
 													</li>
 												</ul>
@@ -769,8 +771,8 @@
 									data-id="f6105bf" data-element_type="widget" data-widget_type="pxl_logo.default">
 									<div class="elementor-widget-container">
 										<div class="pxl-logo d-flex-wrap align-items-center">
-											<a href="https://demo.7iquid.com/apexus/"><img src="./assets/logo2.webp"
-													alt="Apexus"></a>
+											<a href="https://demo.7iquid.com/apexus/"><img
+													src="./assets/logo-prumac.png" alt="Apexus"></a>
 										</div>
 									</div>
 								</div>
@@ -2689,7 +2691,7 @@
 																data-id="0cb00ee" data-element_type="container">
 																<div class="elementor-element elementor-element-bfeb25d e-con-full e-flex e-con e-child"
 																	data-id="bfeb25d" data-element_type="container">
-																	<div style="clip-path: polygon(8% 0, 100% 0, 100% 93%, 92% 100%, 0 100%, 0 7%);"
+																	<div style="clip-path: polygon(8% 0, 100% 0, 100% 93%, 92% 100%, 0 100%, 0 7%); background-color: #E3000F !important;"
 																		class="elementor-element elementor-element-2740c7e e-con-full e-flex e-con e-child"
 																		data-id="2740c7e" data-element_type="container"
 																		data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -2765,7 +2767,7 @@
 
 																<div class="elementor-element elementor-element-f8e4284 e-con-full e-flex e-con e-child"
 																	data-id="f8e4284" data-element_type="container">
-																	<div style="clip-path: polygon(4% 0, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 7%);"
+																	<div style="clip-path: polygon(4% 0, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 7%); background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/bg-service.webp') !important; background-size: cover !important; background-position: center !important; background-color: transparent !important;"
 																		class="elementor-element elementor-element-06a75de e-con-full e-flex e-con e-child"
 																		data-id="06a75de" data-element_type="container"
 																		data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -2862,20 +2864,23 @@
 																				</div>
 																			</div>
 
-																			<div class="elementor-element elementor-element-6c80f52 elementor-widget elementor-widget-icon-box"
+																			<div class="elementor-element elementor-element-6c80f52 elementor-widget"
 																				data-id="6c80f52"
-																				data-element_type="widget"
-																				data-widget_type="icon-box.default">
-																				<div class="elementor-icon-box-wrapper">
-																					<div
-																						class="elementor-icon-box-content">
+																				data-element_type="widget">
+																				<div
+																					style="display: flex; align-items: center; justify-content: flex-start; text-align: left;">
+																					<img src="./assets/img7-about-286x286.webp"
+																						alt="Nathan Mushayavanu"
+																						style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 20px; flex-shrink: 0;"
+																						loading="lazy">
+																					<div>
 																						<h3
-																							class="elementor-icon-box-title">
+																							style="margin-bottom: 5px; font-size: 20px; font-weight: 600; color: #ffffff; line-height: 1.2;">
 																							<span>Nathan
 																								Mushayavanu</span>
 																						</h3>
 																						<p
-																							class="elementor-icon-box-description">
+																							style="margin-bottom: 0; font-size: 15px; color: #ffffff; font-weight: 600;">
 																							Operations Director,
 																							Saint Agencies Pvt Ltd.
 																						</p>
@@ -3287,7 +3292,7 @@
 																		class="pxl-text-editor-wrap d-flex">
 																		<div class="pxl-text-editor elementor-clearfix">
 																			<a class="hover-underline"
-																				href="mailto:hello@bogixglobal.com">hello@bogixglobal.com</a>
+																				href="mailto:info@prumacconnect.co.zw">info@prumacconnect.co.zw</a>
 																		</div>
 																	</div>
 																</div>
@@ -4183,7 +4188,7 @@
 								data-id="0340fb0" data-element_type="widget" data-widget_type="pxl_logo.default">
 								<div class="elementor-widget-container">
 									<div class="pxl-logo d-flex-wrap align-items-center">
-										<a href="https://demo.7iquid.com/apexus/"><img src="./assets/logo-footer2.webp"
+										<a href="https://demo.7iquid.com/apexus/"><img src="./assets/logo-prumac.png"
 												alt="Apexus"></a>
 									</div>
 								</div>
@@ -4357,8 +4362,8 @@
 												<div id="pxl_text_editor-13fa9ff-1712"
 													class="pxl-text-editor-wrap d-flex">
 													<div class="pxl-text-editor elementor-clearfix">
-														<p>Apexus Inc.<br>1 Infinite Loop<br>Cupertino, CA
-															95014<br>United States</p>
+														<p>Cnr L. Takawira <br>& J. Tongogara Ave, <br>Property Center,
+															2nd Floor Suite 7<br>Bulawayo</p>
 													</div>
 												</div>
 											</div>
@@ -4386,7 +4391,7 @@
 													class="pxl-text-editor-wrap d-flex">
 													<div class="pxl-text-editor elementor-clearfix">
 														<p><a
-																href="mailto:hello@apexusglobal.com">hello@apexusglobal.com</a>
+																href="mailto:info@prumacconnect.co.zw">info@prumacconnect.co.zw</a>
 														</p>
 													</div>
 												</div>
@@ -4411,7 +4416,7 @@
 												<div id="pxl_text_editor-5fa7db2-1512"
 													class="pxl-text-editor-wrap d-flex">
 													<div class="pxl-text-editor elementor-clearfix">
-														<p><a href="tel:14081234567">+1 408 123 4567</a></p>
+														<p><a href="tel:0775454692">0775454692</a></p>
 													</div>
 												</div>
 											</div>
@@ -4433,21 +4438,50 @@
 											data-widget_type="social-icons.default">
 											<div class="elementor-social-icons-wrapper elementor-grid" role="list">
 												<span class="elementor-grid-item" role="listitem">
+													<a class="elementor-icon elementor-social-icon elementor-social-icon-whatsapp elementor-repeater-item-whatsapp"
+														href="https://wa.me/" target="_blank">
+														<span class="elementor-screen-only">Whatsapp</span>
+														<svg aria-hidden="true" class="e-font-icon-svg e-fab-whatsapp" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor; width:1em; height:1em;">
+															<path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.2c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.3l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184-186.6 184zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18c-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6 2.1-3.2 7.6-14.2 1.4-2.8 2.8-5.2 3.2-7 1.4-1.9 2.1-3.2 1.6-4.3-.9-1.9-12.5-30.1-17.6-41.2-4.6-10.8-9.7-9.5-12.5-9.5-3.2 0-6.5-.5-10.2-.5-3.7 0-9.3.9-14.3 6.5-5.1 5.6-20.4 19.9-20.4 48.6s20.4 56 23.2 59.7c2.8 3.7 39.8 62.1 97.4 86 13.9 5.8 24.6 9.3 33.3 11.9 13.9 4.2 26.5 3.6 36.5 2.2 11.3-1.6 34.8-14.2 39.8-28 5.1-13.9 5.1-25.5 3.7-28-1.5-2.5-5.6-3.8-11.1-6.6z"></path>
+														</svg>
+													</a>
+												</span>
+												<span class="elementor-grid-item" role="listitem">
+													<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-facebook"
+														href="https://facebook.com/" target="_blank">
+														<span class="elementor-screen-only">Facebook</span>
+														<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor; width:1em; height:1em;">
+															<path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+														</svg>
+													</a>
+												</span>
+												<span class="elementor-grid-item" role="listitem">
+													<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-instagram"
+														href="https://instagram.com/" target="_blank">
+														<span class="elementor-screen-only">Instagram</span>
+														<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill:currentColor; width:1em; height:1em;">
+															<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+														</svg>
+													</a>
+												</span>
+												<span class="elementor-grid-item" role="listitem">
+													<a class="elementor-icon elementor-social-icon elementor-social-icon-pxli-twitter-x elementor-repeater-item-896f94e"
+														href="https://twitter.com/" target="_blank">
+														<span class="elementor-screen-only">Pxli-twitter-x</span>
+														<svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor; width:1em; height:1em;">
+                                                            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.6 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L273.6 181.7 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                                                        </svg> </a>
+												</span>
+												<span class="elementor-grid-item" role="listitem">
 													<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-223882f"
 														href="https://www.linkedin.com/" target="_blank">
 														<span class="elementor-screen-only">Linkedin</span>
 														<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin"
-															viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+															viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor; width:1em; height:1em;">
 															<path
 																d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
 															</path>
 														</svg> </a>
-												</span>
-												<span class="elementor-grid-item" role="listitem">
-													<a class="elementor-icon elementor-social-icon elementor-social-icon-pxli-twitter-x elementor-repeater-item-896f94e"
-														target="_blank">
-														<span class="elementor-screen-only">Pxli-twitter-x</span>
-														<i aria-hidden="true" class="pxli pxli-twitter-x"></i> </a>
 												</span>
 											</div>
 										</div>
@@ -4461,9 +4495,7 @@
 										<div class="elementor-widget-container">
 											<div id="pxl_text_editor-b485022-3525" class="pxl-text-editor-wrap d-flex">
 												<div class="pxl-text-editor elementor-clearfix">
-													<p>Â©2025 <a
-															href="https://themeforest.net/user/7iquid/portfolio">Apexus</a>.
-														All rights reserved.</p>
+													<p>Â©2025 Prumac Connect. All rights reserved.</p>
 												</div>
 											</div>
 										</div>
@@ -4775,7 +4807,10 @@
 				style="transition: stroke-dashoffset 10ms linear; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 17.4448;">
 			</path>
 		</svg>
-		<span class="pxl-icon pxli-angle-up"></span>
+		<span class="pxl-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+				fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg></span>
 	</a>
 	<script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/apexus/*"},{"not":{"href_matches":["/apexus/wp-*.php","/apexus/wp-admin/*","/apexus/wp-content/uploads/*","/apexus/wp-content/*","/apexus/wp-content/plugins/*","/apexus/wp-content/themes/apexus/*","/apexus/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}

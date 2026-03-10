@@ -6162,7 +6162,7 @@ input, select, textarea {
   color: #68758C;
 }
 .pxl-mailchimp.style-3 .btn-button {
-  --primary-Color: #2458F6;
+  --primary-Color: #020261;
   padding: 8px 16px;
   color: #FFF;
   font-family: "Figtree", sans-serif;
@@ -6584,7 +6584,7 @@ input, select, textarea {
 .form-request-quote input:active, .form-request-quote input:hover, .form-request-quote input:focus, .form-request-quote select:active, .form-request-quote select:hover, .form-request-quote select:focus, .form-request-quote .nice-select:active, .form-request-quote .nice-select:hover, .form-request-quote .nice-select:focus {
   color: var(--heading-color);
   background-color: transparent;
-  box-shadow: 0 1px 2px 0 #2458F6, 0 0 0 1px #2458F6;
+  box-shadow: 0 1px 2px 0 #020261, 0 0 0 1px #020261;
 }
 .form-request-quote input:active::placeholder, .form-request-quote input:hover::placeholder, .form-request-quote input:focus::placeholder, .form-request-quote select:active::placeholder, .form-request-quote select:hover::placeholder, .form-request-quote select:focus::placeholder, .form-request-quote .nice-select:active::placeholder, .form-request-quote .nice-select:hover::placeholder, .form-request-quote .nice-select:focus::placeholder {
   color: #68758C;
@@ -6698,7 +6698,7 @@ input, select, textarea {
 .form-track textarea:active, .form-track textarea:hover, .form-track textarea:focus {
   color: var(--heading-color);
   background-color: transparent;
-  box-shadow: 0 1px 2px 0 #2458F6, 0 0 0 1px #2458F6;
+  box-shadow: 0 1px 2px 0 #020261, 0 0 0 1px #020261;
 }
 .form-track textarea:active::placeholder, .form-track textarea:hover::placeholder, .form-track textarea:focus::placeholder {
   color: #68758C;
@@ -6723,7 +6723,7 @@ input, select, textarea {
 .form-track input:active, .form-track input:hover, .form-track input:focus, .form-track select:active, .form-track select:hover, .form-track select:focus, .form-track .nice-select:active, .form-track .nice-select:hover, .form-track .nice-select:focus {
   color: var(--heading-color);
   background-color: transparent;
-  box-shadow: 0 1px 2px 0 #2458F6, 0 0 0 1px #2458F6;
+  box-shadow: 0 1px 2px 0 #020261, 0 0 0 1px #020261;
 }
 .form-track input:active::placeholder, .form-track input:hover::placeholder, .form-track input:focus::placeholder, .form-track select:active::placeholder, .form-track select:hover::placeholder, .form-track select:focus::placeholder, .form-track .nice-select:active::placeholder, .form-track .nice-select:hover::placeholder, .form-track .nice-select:focus::placeholder {
   color: #68758C;
@@ -7568,7 +7568,7 @@ input, select, textarea {
   transform: translate(0, -50%);
 }
 .btn.btn-third, button.btn-third, .button.btn-third, input[type="submit"].btn-third, input[type="button"].btn-third, .pxl-btn.btn-third {
-  --primary-Color: #2458F6;
+  --primary-Color: #020261;
   --clp-right: 80%;
   --clp-bottom: 94%;
   padding: 8px 16px;
@@ -28893,3 +28893,4 @@ ul.order_details li:last-of-type {
   margin-right: 5px;
 }
 /*# sourceMappingURL=style.map */
+

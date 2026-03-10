@@ -1,0 +1,25 @@
+( function( $ ) {
+    "use strict"; 
+    var apexusHeadingScrollEffectHandle = function( $scope, $ ) {
+
+        var split = new SplitText( $scope.find( '.pxl-heading-scroll-effect .heading-text')[0], { type: "lines", postion: "absolute"});
+        $scope.find( '.pxl-heading-scroll-effect .heading-text div').each( function(){
+            gsap.to( $(this)[0], {
+                backgroundPositionX: '0%',
+                ease: 'power2.inOut',
+                scrollTrigger: {
+                    trigger: $(this)[0],
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 1,
+                },
+            });
+        })
+    };
+ 
+    // Make sure you run this code under Elementor.
+    $( window ).on( 'elementor/frontend/init', function() {
+        // Swipers
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_heading_scroll_effect.default', apexusHeadingScrollEffectHandle );        
+    } );
+} )( jQuery );
