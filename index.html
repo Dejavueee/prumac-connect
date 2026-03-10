@@ -528,6 +528,43 @@
 			color: #2458f6;
 		}
 	</style>
+
+	<style>
+		/* blur the background of the Get in Touch section */
+		#git-cta {
+			position: relative;
+			overflow: hidden;
+		}
+
+		/* blurred copy of the same background image */
+		#git-cta::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: inherit;
+			/* copies your background:url(...) */
+			filter: blur(16px);
+			transform: scale(1.12);
+			/* avoids blur edges */
+			z-index: 0;
+		}
+
+		/* dark overlay to match the demo style (optional but recommended) */
+		#git-cta::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.45);
+			z-index: 1;
+		}
+
+		/* keep your section content above the overlays */
+		#git-cta>* {
+			position: relative;
+			z-index: 2;
+		}
+	</style>
+
 	<script src="./assets/wp-emoji-release.min.js.download" defer=""></script>
 </head>
 
@@ -1647,20 +1684,8 @@
 										<div style="clip-path: polygon(0% 0, 100% 0, 100% 95%, 97.5% 100%, 0 100%, 0 0%);"
 											class="elementor-element elementor-element-3048bdc e-con-full e-flex e-con e-parent e-lazyloaded"
 											data-id="3048bdc" data-element_type="container">
-											<div class="elementor-element elementor-element-34c7308 elementor-absolute elementor-widget elementor-widget-pxl_image"
-												data-id="34c7308" data-element_type="widget"
-												data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
-												data-widget_type="pxl_image.default">
-												<div class="elementor-widget-container">
-													<div id="pxl_image-34c7308-3744"
-														class="pxl-image-wg d-flex pxl-move-from-right default pxl-animated"
-														data-setting-custom="{&quot;custom_animation_delay&quot;:400}">
-														<img loading="lazy" decoding="async" width="642" height="172"
-															src="./assets/img11-home2.webp"
-															class="attachment-full size-full wp-image-3187" alt="">
-													</div>
-												</div>
-											</div>
+
+
 											<div class="elementor-element elementor-element-ac8687c elementor-widget elementor-widget-pxl_services_list"
 												data-id="ac8687c" data-element_type="widget"
 												data-widget_type="pxl_services_list.default">
@@ -1697,6 +1722,7 @@
 																		sizes="(max-width: 1440px) 100vw, 1440px">
 																</div>
 															</div>
+
 															<div class="col-6 content">
 																<div id="item-af12ea1" class="box-content ">
 																	<div class="item-image">
@@ -1832,6 +1858,7 @@
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-7350c69 elementor-widget elementor-widget-pxl_text_editor"
 																	data-id="7350c69" data-element_type="widget"
 																	data-widget_type="pxl_text_editor.default">
@@ -1840,37 +1867,16 @@
 																			class="pxl-text-editor-wrap d-flex">
 																			<div class="pxl-text-editor elementor-clearfix pxl-split-text split-in-right"
 																				style="--title_opacity: 1; --subtitle_opacity: 1;">
-																				<p style="perspective: 400px;">
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							W</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							h</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							y</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							U</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							s</div>
-																					</div>
-																				</div>
+																				<p style="perspective: 400px;">Why
+																					Choose Us
 																				</p>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+
 															</div>
+
 															<div class="elementor-element elementor-element-f12e88f elementor-widget elementor-widget-pxl_heading"
 																data-id="f12e88f" data-element_type="widget"
 																data-widget_type="pxl_heading.default">
@@ -1880,155 +1886,15 @@
 																		<div class="pxl-heading-inner">
 																			<h1 class="heading-title pxl-split-text split-in-right"
 																				style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							I</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							n</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							a</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							W</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							o</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							r</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							l</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							d</div>
-																					</div>
-																				</div>
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							T</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							h</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							a</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							t</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							M</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							o</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							v</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							s</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							F</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							a</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							s</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							t</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							,</div>
-																					</div>
-																				</div>
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							W</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							M</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							o</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							v</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							S</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							m</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							a</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							r</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							t</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							r</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							.</div>
-																					</div>
-																				</div>
+																				In a World<br>
+																				That Moves Fast,<br>
+																				We Move Smarter.
 																			</h1>
 																		</div>
 																	</div>
 																</div>
 															</div>
+
 
 															<div class="elementor-element elementor-element-ffa29ff pxl-anm-pxl_fadeInUp elementor-widget elementor-widget-pxl_button pxl-animated pxl_fadeInUp"
 																data-id="ffa29ff" data-element_type="widget"
@@ -2040,52 +1906,14 @@
 																		<a href="https://demo.7iquid.com/apexus/faqs/"
 																			class="pxl-btn btn-third icon-ps-right"
 																			data-text="Let&#39;s discuss today!">
-																			<span class="pxl-button-text"><span
-																					class="letter"
-																					style="animation-delay: 0s;">L</span><span
-																					class="letter"
-																					style="animation-delay: 0.045s;">e</span><span
-																					class="letter"
-																					style="animation-delay: 0.09s;">t</span><span
-																					class="letter"
-																					style="animation-delay: 0.135s;">'</span><span
-																					class="letter"
-																					style="animation-delay: 0.18s;">s</span><span
-																					class="letter"
-																					style="animation-delay: 0.225s;">&nbsp;</span><span
-																					class="letter"
-																					style="animation-delay: 0.27s;">d</span><span
-																					class="letter"
-																					style="animation-delay: 0.315s;">i</span><span
-																					class="letter"
-																					style="animation-delay: 0.36s;">s</span><span
-																					class="letter"
-																					style="animation-delay: 0.405s;">c</span><span
-																					class="letter"
-																					style="animation-delay: 0.45s;">u</span><span
-																					class="letter"
-																					style="animation-delay: 0.495s;">s</span><span
-																					class="letter"
-																					style="animation-delay: 0.54s;">s</span><span
-																					class="letter"
-																					style="animation-delay: 0.585s;">&nbsp;</span><span
-																					class="letter"
-																					style="animation-delay: 0.63s;">t</span><span
-																					class="letter"
-																					style="animation-delay: 0.675s;">o</span><span
-																					class="letter"
-																					style="animation-delay: 0.72s;">d</span><span
-																					class="letter"
-																					style="animation-delay: 0.765s;">a</span><span
-																					class="letter"
-																					style="animation-delay: 0.81s;">y</span><span
-																					class="letter"
-																					style="animation-delay: 0.855s;">!</span></span>
+																			<span class="pxl-button-text">Let's discuss
+																				today!</span>
 																		</a>
 																	</div>
 																</div>
 															</div>
 														</div>
+
 														<div class="elementor-element elementor-element-45fcc4d e-con-full e-flex e-con e-child"
 															data-id="45fcc4d" data-element_type="container">
 															<div class="elementor-element elementor-element-4bc9cff pxl-swiper-dots-true pxl-swiper-arrows-false pxl-swiper-dots-bullets elementor-widget elementor-widget-pxl_fancy_box_carousel"
@@ -2121,19 +1949,21 @@
 																							</div>
 																							<div class="item-content">
 																								<h3 class="item-title">
-																									Taking your business
-																									to the
-																									skies. </h3>
+																									Moving business
+																									forward.
+																								</h3>
 																								<div
 																									class="item-description">
-																									From express parcels
-																									to
-																									cargo charter, we
-																									get it
-																									there â€” faster,
-																									safer,
-																									globally. </div>
+																									Reliable road
+																									transport and fuel
+																									logistics solutions
+																									designed to keep
+																									your operations
+																									running smoothly and
+																									on schedule.
+																								</div>
 																							</div>
+
 																						</div>
 																					</div>
 																					<div class="pxl-swiper-slide swiper-slide swiper-slide-prev"
@@ -2154,20 +1984,20 @@
 																							</div>
 																							<div class="item-content">
 																								<h3 class="item-title">
-																									Anchored in
-																									reliability
+																									Built on reliability
 																								</h3>
 																								<div
 																									class="item-description">
-																									We navigate global
-																									trade
-																									with streamlined
-																									ocean
-																									freight that keeps
-																									your
-																									supply chain moving.
+																									We deliver
+																									dependable goods and
+																									fuel transportation
+																									services with a
+																									strong focus on
+																									safety,
+																									and consistency.
 																								</div>
 																							</div>
+
 																						</div>
 																					</div>
 																					<div class="pxl-swiper-slide swiper-slide swiper-slide-visible swiper-slide-active"
@@ -2188,19 +2018,21 @@
 																							</div>
 																							<div class="item-content">
 																								<h3 class="item-title">
-																									Connected by land,
-																									powered
-																									by precision. </h3>
+																									Connected by road
+																								</h3>
 																								<div
 																									class="item-description">
-																									Bogix integrates
-																									road and
-																									rail to deliver on
-																									time,
-																									every time â€” from
-																									ports to
-																									your door. </div>
+																									Prumac Connect
+																									provides efficient
+																									road-based
+																									logistics, fuel
+																									transport, and tank
+																									hire services
+																									tailored to business
+																									needs.
+																								</div>
 																							</div>
+
 																						</div>
 																					</div>
 																				</div>
@@ -2222,13 +2054,13 @@
 																				aria-label="Go to slide 3"
 																				aria-current="true"></span>
 																		</div>
-
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
+
 												<div class="elementor-element elementor-element-54cdb4d e-flex e-con-boxed e-con e-parent e-lazyloaded"
 													data-id="54cdb4d" data-element_type="container">
 													<div class="e-con-inner">
@@ -2299,16 +2131,16 @@
 																					<h3
 																						class="elementor-icon-box-title">
 																						<span>
-																							Global Freight Expertise
+																							Reliable Transport
 																						</span>
 																					</h3>
 
 																					<p
 																						class="elementor-icon-box-description">
-																						Seamless shipping solutions
-																						across
-																						regions, backed by industry
-																						know-how.
+																						Dependable road transport
+																						services for goods and fuel,
+																						delivered safely and on time
+																						across Zimbabwe.
 																					</p>
 
 																				</div>
@@ -2392,15 +2224,17 @@
 																					<h3
 																						class="elementor-icon-box-title">
 																						<span>
-																							Optimized Transit Times
+																							Fuel Safety
 																						</span>
 																					</h3>
 
 																					<p
 																						class="elementor-icon-box-description">
-																						We cut delivery time through
-																						smart
-																						routes and fast handling. </p>
+																						Certified fuel handling,
+																						compliant equipment, and
+																						safety procedures for secure
+																						fuel transportation and tank
+																						hire. </p>
 
 																				</div>
 
@@ -2463,9 +2297,10 @@
 
 																					<p
 																						class="elementor-icon-box-description">
-																						Real-time updates and expert
-																						support â€”
-																						whenever you need. </p>
+																						Responsive coordination and
+																						real-time communication to
+																						support your deliveries whenever
+																						you need assistance. </p>
 
 																				</div>
 
@@ -2477,6 +2312,8 @@
 														</div>
 													</div>
 												</div>
+
+												<!--moving banner-->
 												<div class="elementor-element elementor-element-0ef0977 e-con-full e-flex e-con e-parent e-lazyloaded"
 													data-id="0ef0977" data-element_type="container"
 													data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -2484,125 +2321,96 @@
 														data-id="3e05fe5" data-element_type="widget"
 														data-widget_type="pxl_logo_marquee.default">
 														<div class="elementor-widget-container">
-															<div class="pxl-logo-marquee1 layout-2">
-																<div class="pxl-logo-active pxl-flex-middle">
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(565.737%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img17-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Rail Freight </h4>
-																		</div>
+															<div class="prumac-marquee">
+																<div class="prumac-track">
+																	<div class="prumac-item">
+																		<img src="./assets/icons/truck.svg" alt="">
+																		<span>Road Transport</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-167.416%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img18-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Ocean Freight </h4>
-																		</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/fuel.svg" alt="">
+																		<span>Fuel Logistics</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-207.032%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img17-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Air Freight </h4>
-																		</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/container.svg" alt="">
+																		<span>Container Hire</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-181.026%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img16-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Road Freight </h4>
-																		</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/map-pinned.svg" alt="">
+																		<span>Logistics Support</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-198.487%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img15-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Rail Freight </h4>
-																		</div>
+
+																	<!-- Duplicate same items again (for seamless looping) -->
+																	<div class="prumac-item">
+																		<img src="./assets/icons/truck.svg" alt="">
+																		<span>Road Transport</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-167.773%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img18-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Ocean Freight </h4>
-																		</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/fuel.svg" alt="">
+																		<span>Fuel Logistics</span>
 																	</div>
-																	<div class="pxl-item--marquee col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12"
-																		data-speed="1" data-slip-type="right"
-																		style="translate: none; rotate: none; scale: none; transform: translate(-198.48%, 0%) translate3d(0px, 0px, 0px);">
-																		<div class="pxl-item--inner pxl-flex-middle">
-																			<div class="item-image">
-																				<img loading="lazy" decoding="async"
-																					width="32" height="32"
-																					src="./assets/img17-home2.webp"
-																					class="no-lazyload attachment-full"
-																					alt="">
-																			</div>
-																			<h4 class="pxl-text--logo">
-																				Rail Freight </h4>
-																		</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/container.svg" alt="">
+																		<span>Container Hire</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/map-pinned.svg" alt="">
+																		<span>Logistics Support</span>
 																	</div>
 																</div>
+
+																<div class="prumac-track">
+																	<div class="prumac-item">
+																		<img src="./assets/icons/truck.svg" alt="">
+																		<span>Road Transport</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/fuel.svg" alt="">
+																		<span>Fuel Logistics</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/container.svg" alt="">
+																		<span>Container Hire</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/map-pinned.svg" alt="">
+																		<span>Logistics Support</span>
+																	</div>
+
+																	<!-- Duplicate same items again (for seamless looping) -->
+																	<div class="prumac-item">
+																		<img src="./assets/icons/truck.svg" alt="">
+																		<span>Road Transport</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/fuel.svg" alt="">
+																		<span>Fuel Logistics</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/container.svg" alt="">
+																		<span>Container Hire</span>
+																	</div>
+																	<div class="prumac-item">
+																		<img src="./assets/icons/map-pinned.svg" alt="">
+																		<span>Logistics Support</span>
+																	</div>
+																</div>
+
 															</div>
 														</div>
 													</div>
 												</div>
+
+												<!--Testimonials-->
 												<div class="elementor-element elementor-element-4da9cff e-flex e-con-boxed e-con e-parent e-lazyloaded"
 													data-id="4da9cff" data-element_type="container">
 													<div class="e-con-inner">
 														<div class="elementor-element elementor-element-85b84c8 e-con-full e-flex e-con e-child"
 															data-id="85b84c8" data-element_type="container">
 															<div class="elementor-element elementor-element-a893184 e-con-full e-flex e-con e-child"
-																data-id="a893184" data-element_type="container">
+																data-id="a893184" data-element_type="container"
+																style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; width:100%;">
+
 																<div class="elementor-element elementor-element-e7bcf23 e-con-full e-flex e-con e-child"
 																	data-id="e7bcf23" data-element_type="container">
 																	<div class="pxl-border-wg-anm elementor-element elementor-element-acf110e elementor-widget__width-auto elementor-widget elementor-widget-pxl_divider"
@@ -2630,63 +2438,26 @@
 																			</div>
 																		</div>
 																	</div>
+
 																	<div class="elementor-element elementor-element-bea0a60 elementor-widget elementor-widget-pxl_text_editor"
 																		data-id="bea0a60" data-element_type="widget"
 																		data-widget_type="pxl_text_editor.default">
 																		<div class="elementor-widget-container">
-																			<div id="pxl_text_editor-bea0a60-8855"
-																				class="pxl-text-editor-wrap d-flex">
-																				<div class="pxl-text-editor elementor-clearfix pxl-split-text split-in-right"
-																					style="--title_opacity: 1; --subtitle_opacity: 1;">
-																					<p style="perspective: 400px;">
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								T</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								m</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								o</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								n</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								a</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								l</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																						</div>
+																			<div class="elementor-widget-container">
+																				<div id="pxl_text_editor-bea0a60-8855"
+																					class="pxl-text-editor-wrap d-flex">
+																					<div class="pxl-text-editor elementor-clearfix pxl-split-text split-in-right"
+																						style="--title_opacity: 1; --subtitle_opacity: 1;">
+																						<p style="perspective: 400px;">
+																							Client Feedback</p>
 																					</div>
-																					</p>
 																				</div>
 																			</div>
+
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-13f7284 elementor-widget elementor-widget-pxl_heading"
 																	data-id="13f7284" data-element_type="widget"
 																	data-widget_type="pxl_heading.default">
@@ -2696,152 +2467,17 @@
 																			<div class="pxl-heading-inner">
 																				<h1 class="heading-title pxl-split-text split-in-right"
 																					style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								W</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								h</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								a</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																						</div>
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								o</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								u</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								r</div>
-																						</div>
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								c</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								l</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								n</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																						</div>
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								h</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								n</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								k</div>
-																						</div>
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								a</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								b</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								o</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								u</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																						</div>
-																					</div>
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								B</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								o</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								g</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								x</div>
-																						</div>
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								r</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								v</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								c</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																						</div>
-																					</div>
+																					What our <br>
+																					clients say about <br>
+																					<strong>Prumac Connect</strong>
 																				</h1>
 																			</div>
 																		</div>
-
 																	</div>
 																</div>
 															</div>
 														</div>
+
 														<div class="elementor-element elementor-element-8d6f23e e-con-full e-flex e-con e-child"
 															data-id="8d6f23e" data-element_type="container">
 															<div class="elementor-element elementor-element-f7c7b5d e-con-full e-flex e-con e-child"
@@ -2918,6 +2554,7 @@
 																				</div>
 																			</div>
 																		</div>
+
 																		<div class="elementor-element elementor-element-9b4a8f5 e-con-full e-flex e-con e-child"
 																			data-id="9b4a8f5"
 																			data-element_type="container">
@@ -2931,275 +2568,43 @@
 																						<div class="pxl-heading-inner">
 																							<h2 class="heading-title pxl-split-text split-in-fade"
 																								style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																								<div class="split-line"
-																									style="display: block; text-align: start; position: relative;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											â€œ</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											B</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											g</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											x</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											h</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											s</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											s</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											m</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											d</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											u</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											p</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											s</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											b</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											y</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											d</div>
-																									</div>
-																								</div>
-																								<div class="split-line"
-																									style="display: block; text-align: start; position: relative;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											x</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											p</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											c</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											s</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											.</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											T</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											u</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											y</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											b</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											.</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											â€</div>
-																									</div>
-																								</div>
+																								“Prumac Connect
+																								delivers on time and
+																								communicates clearly
+																								throughout the
+																								journey. Reliable
+																								service we can
+																								trust.”
 																							</h2>
 																						</div>
 																					</div>
-
 																				</div>
 																			</div>
+
 																			<div class="elementor-element elementor-element-58f16e3 elementor-widget elementor-widget-icon-box"
 																				data-id="58f16e3"
 																				data-element_type="widget"
 																				data-widget_type="icon-box.default">
 																				<div class="elementor-icon-box-wrapper">
-
-
 																					<div
 																						class="elementor-icon-box-content">
-
 																						<h3
 																							class="elementor-icon-box-title">
-																							<span>
-																								Lisa McCarthy </span>
+																							<span>Tapiwa
+																								Ndlovu</span>
 																						</h3>
-
 																						<p
 																							class="elementor-icon-box-description">
-																							Senior Logistics Manager,
-																							Apex
-																							Global Freight </p>
-
+																							Logistics Manager,
+																							Retail Distribution
+																						</p>
 																					</div>
-
 																				</div>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-fb1704d e-con-full e-flex e-con e-child"
 																	data-id="fb1704d" data-element_type="container">
 																	<div style="clip-path: polygon(8% 0, 100% 0, 100% 93%, 92% 100%, 0 100%, 0 7%);"
@@ -3244,7 +2649,8 @@
 																						class="pxl-text-editor-wrap d-flex">
 																						<div
 																							class="pxl-text-editor elementor-clearfix">
-																							<p>Facts &amp; Numbers</p>
+																							<p>Facts &amp; Numbers
+																							</p>
 																						</div>
 																					</div>
 																				</div>
@@ -3276,6 +2682,7 @@
 																</div>
 															</div>
 														</div>
+
 														<div class="elementor-element elementor-element-d55e4cc e-con-full e-flex e-con e-child"
 															data-id="d55e4cc" data-element_type="container">
 															<div class="elementor-element elementor-element-0cb00ee e-con-full e-flex e-con e-child"
@@ -3324,7 +2731,8 @@
 																						class="pxl-text-editor-wrap d-flex">
 																						<div
 																							class="pxl-text-editor elementor-clearfix">
-																							<p>Facts &amp; Numbers</p>
+																							<p>Facts &amp; Numbers
+																							</p>
 																						</div>
 																					</div>
 																				</div>
@@ -3354,6 +2762,7 @@
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-f8e4284 e-con-full e-flex e-con e-child"
 																	data-id="f8e4284" data-element_type="container">
 																	<div style="clip-path: polygon(4% 0, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 7%);"
@@ -3426,9 +2835,11 @@
 																				</div>
 																			</div>
 																		</div>
+
 																		<div class="elementor-element elementor-element-c76130c e-con-full e-flex e-con e-child"
 																			data-id="c76130c"
 																			data-element_type="container">
+
 																			<div class="elementor-element elementor-element-380e6c6 elementor-widget elementor-widget-pxl_heading"
 																				data-id="380e6c6"
 																				data-element_type="widget"
@@ -3439,251 +2850,50 @@
 																						<div class="pxl-heading-inner">
 																							<h2 class="heading-title pxl-split-text split-in-fade"
 																								style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																								<div class="split-line"
-																									style="display: block; text-align: start; position: relative;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											â€œ</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											F</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											m</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											d</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											y</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											,</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											h</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											B</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											g</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											x</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											m</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											f</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											l</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											k</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											a</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																									</div>
-																								</div>
-																								<div class="split-line"
-																									style="display: block; text-align: start; position: relative;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											x</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											t</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											e</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											s</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											i</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											f</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											u</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											r</div>
-																									</div>
-																									<div
-																										style="position:relative;display:inline-block;">
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											o</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											w</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											n</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											.</div>
-																										<div
-																											style="position: relative; display: inline-block; opacity: 1;">
-																											â€</div>
-																									</div>
-																								</div>
+																								“From day one, Prumac
+																								Connect has been
+																								dependable — fuel
+																								deliveries handled
+																								safely and
+																								professionally.”
 																							</h2>
 																						</div>
 																					</div>
-
 																				</div>
 																			</div>
+
 																			<div class="elementor-element elementor-element-6c80f52 elementor-widget elementor-widget-icon-box"
 																				data-id="6c80f52"
 																				data-element_type="widget"
 																				data-widget_type="icon-box.default">
 																				<div class="elementor-icon-box-wrapper">
-
-
 																					<div
 																						class="elementor-icon-box-content">
-
 																						<h3
 																							class="elementor-icon-box-title">
-																							<span>
-																								Nathan Ellis </span>
+																							<span>Nathan
+																								Mushayavanu</span>
 																						</h3>
-
 																						<p
 																							class="elementor-icon-box-description">
 																							Operations Director,
-																							TranzitFlow
-																							Ltd. </p>
-
+																							Saint Agencies Pvt Ltd.
+																						</p>
 																					</div>
-
 																				</div>
 																			</div>
 																		</div>
+
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div style="clip-path: polygon(0% 0, 100% 0, 100% 94%, 97.5% 100%, 0 100%, 0 0%);"
-													class="elementor-element elementor-element-a255289 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+
+												<!--Articles-->
+												<div style="clip-path: polygon(0% 0, 100% 0, 100% 94%, 97.5% 100%, 0 100%, 0 0%); background-image:url('./assets/articles-bg.jpg');"
+													class="elementor-element elementor-element-a255289 e-flex e-con-boxed e-con e-parent e-lazyloaded articles-blur-bg"
 													data-id="a255289" data-element_type="container"
 													data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 													<div class="e-con-inner">
@@ -3726,6 +2936,7 @@
 																			</div>
 																		</div>
 																	</div>
+
 																	<div class="elementor-element elementor-element-fc83f12 elementor-widget elementor-widget-pxl_text_editor"
 																		data-id="fc83f12" data-element_type="widget"
 																		data-widget_type="pxl_text_editor.default">
@@ -3735,42 +2946,13 @@
 																				<div class="pxl-text-editor elementor-clearfix pxl-split-text split-in-right"
 																					style="--title_opacity: 1; --subtitle_opacity: 1;">
 																					<p style="perspective: 400px;">
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								A</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								r</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								c</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								l</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																						</div>
-																					</div>
-																					</p>
+																						Articles</p>
 																				</div>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-7a60921 elementor-widget elementor-widget-pxl_heading"
 																	data-id="7a60921" data-element_type="widget"
 																	data-widget_type="pxl_heading.default">
@@ -3780,67 +2962,14 @@
 																			<div class="pxl-heading-inner">
 																				<h1 class="heading-title pxl-split-text split-in-right"
 																					style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								L</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								a</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																						</div>
-																					</div>
-																					<div class="split-line"
-																						style="display: block; text-align: start; position: relative;">
-																						<div
-																							style="position:relative;display:inline-block;">
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								A</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								r</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								t</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								i</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								c</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								l</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								e</div>
-																							<div
-																								style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																								s</div>
-																						</div>
-																					</div>
+																					Latest Articles
 																				</h1>
 																			</div>
 																		</div>
-
 																	</div>
 																</div>
 															</div>
+
 															<div class="elementor-element elementor-element-541d2b2 elementor-widget elementor-widget-pxl_text_editor"
 																data-id="541d2b2" data-element_type="widget"
 																data-widget_type="pxl_text_editor.default">
@@ -3848,7 +2977,8 @@
 																	<div id="pxl_text_editor-541d2b2-2851"
 																		class="pxl-text-editor-wrap d-flex">
 																		<div class="pxl-text-editor elementor-clearfix">
-																			<p>Discover insights and trends in modern
+																			<p>Discover insights and trends in
+																				modern
 																				logistics.
 																			</p>
 																		</div>
@@ -3856,6 +2986,7 @@
 																</div>
 															</div>
 														</div>
+
 														<div class="elementor-element elementor-element-7e8725d e-con-full e-flex e-con e-child"
 															data-id="7e8725d" data-element_type="container">
 															<div class="elementor-element elementor-element-74bf464 elementor-widget elementor-widget-pxl_services_list"
@@ -3879,17 +3010,22 @@
 																						</div>
 																					</div>
 																					<div class="sub-des">
-																						<div class="item-subtitle">Jun
-																							26, 2025
+																						<div class="item-subtitle">
+																							Dec
+																							2, 2025
 																						</div>
 																						<div class="item-description">
-																							Discover
-																							how intermodal transport is
-																							shaping
-																							the future of global
-																							freight. Learn
-																							how Bogix adapts to shifting
-																							demands.</div>
+																							As fuel demand grows across
+																							Southern Africa, transport
+																							safety has become a top
+																							priority. This article
+																							explores how modern fuel
+																							haulage companies are
+																							improving tanker standards,
+																							driver training, and route
+																							risk management to ensure
+																							safer and compliant fuel
+																							deliveries.</div>
 																					</div>
 																				</div>
 																				<div id="item-e044adb"
@@ -3906,17 +3042,21 @@
 																						</div>
 																					</div>
 																					<div class="sub-des">
-																						<div class="item-subtitle">Jun
-																							2, 2025
+																						<div class="item-subtitle">
+																							Dec
+																							31, 2025
 																						</div>
 																						<div class="item-description">
-																							Discover
-																							how intermodal transport is
-																							shaping
-																							the future of global
-																							freight. Learn
-																							how Bogix adapts to shifting
-																							demands.</div>
+																							Road transport remains the
+																							backbone of regional
+																							logistics. We break down how
+																							efficient fleet management,
+																							real-time tracking, and
+																							cross-border coordination
+																							are helping businesses move
+																							goods faster and more
+																							reliably across Zimbabwe and
+																							neighboring markets..</div>
 																					</div>
 																				</div>
 																				<div id="item-8cff320"
@@ -3933,28 +3073,33 @@
 																						</div>
 																					</div>
 																					<div class="sub-des">
-																						<div class="item-subtitle">Jun
-																							30, 2025
+																						<div class="item-subtitle">
+																							Jan
+																							30, 2026
 																						</div>
 																						<div class="item-description">
-																							Discover
-																							how intermodal transport is
-																							shaping
-																							the future of global
-																							freight. Learn
-																							how Bogix adapts to shifting
-																							demands.</div>
+																							From GPS fleet tracking to
+																							digital dispatch systems,
+																							technology is reshaping
+																							transport operations. This
+																							article highlights the key
+																							logistics technologies
+																							improving delivery accuracy,
+																							reducing downtime, and
+																							enhancing customer
+																							visibility in modern
+																							transport businesses.</div>
 																					</div>
 																				</div>
 																			</div>
 																			<div class="col-6 title">
 																				<div class="item-inner active"
 																					data-target="#item-bc4d640">
-																					<h3 class="item-title">Ocean Freight
-																						Trends
-																						to Watch in 2025</h3>
-																					<div class="item-subtitle">Jun 26,
-																						2025
+																					<h3 class="item-title">Fuel
+																						Transport Safety: Raising the
+																						Bar in 2025</h3>
+																					<div class="item-subtitle">Dec
+																						2, 2025
 																					</div>
 																					<div class="btn-more">
 																						<a href="https://demo.7iquid.com/apexus/2-day-delivery-without-the-chaos-a-practical-playbook-for-growing-brands/"
@@ -3973,10 +3118,11 @@
 																				</div>
 																				<div class="item-inner "
 																					data-target="#item-e044adb">
-																					<h3 class="item-title">Smart
-																						Railways: A New
-																						Era in Logistics</h3>
-																					<div class="item-subtitle">Jun 2,
+																					<h3 class="item-title">How Road
+																						Freight Is Powering Regional
+																						Trade</h3>
+																					<div class="item-subtitle">Dec
+																						31,
 																						2025</div>
 																					<div class="btn-more">
 																						<a href="https://demo.7iquid.com/apexus/returns-that-retain-turning-rmas-into-repeat-customers-2/"
@@ -3995,11 +3141,13 @@
 																				</div>
 																				<div class="item-inner "
 																					data-target="#item-8cff320">
-																					<h3 class="item-title">Why Air Cargo
-																						Is
-																						Gaining Momentum Fast</h3>
-																					<div class="item-subtitle">Jun 30,
-																						2025
+																					<h3 class="item-title">Logistics
+																						Technology Trends Every
+																						Transport Company Should Watch
+																					</h3>
+																					<div class="item-subtitle">Jan
+																						30,
+																						2026
 																					</div>
 																					<div class="btn-more">
 																						<a href="https://demo.7iquid.com/apexus/2-day-delivery-without-the-chaos-a-practical-playbook-for-growing-brands/"
@@ -4016,34 +3164,15 @@
 																					</div>
 																					<div class="pxl-divider"></div>
 																				</div>
-																				<a class="button-more"
-																					href="https://demo.7iquid.com/apexus/blog-left-sidebar/"
-																					target="_blank"> <span
-																						class="pxl-btn btn-third">
+																				<a class="button-more" href="/articles"
+																					target="_self">
+																					<span class="pxl-btn btn-third">
 																						<span
-																							class="pxl-button-text"><span
-																								class="letter"
-																								style="animation-delay: 0s;">B</span><span
-																								class="letter"
-																								style="animation-delay: 0.045s;">r</span><span
-																								class="letter"
-																								style="animation-delay: 0.09s;">o</span><span
-																								class="letter"
-																								style="animation-delay: 0.135s;">w</span><span
-																								class="letter"
-																								style="animation-delay: 0.18s;">s</span><span
-																								class="letter"
-																								style="animation-delay: 0.225s;">e</span><span
-																								class="letter"
-																								style="animation-delay: 0.27s;">&nbsp;</span><span
-																								class="letter"
-																								style="animation-delay: 0.315s;">A</span><span
-																								class="letter"
-																								style="animation-delay: 0.36s;">l</span><span
-																								class="letter"
-																								style="animation-delay: 0.405s;">l</span></span>
+																							class="pxl-button-text">View
+																							All Articles</span>
 																					</span>
 																				</a>
+
 																			</div>
 																		</div>
 																	</div>
@@ -4052,6 +3181,7 @@
 														</div>
 													</div>
 												</div>
+
 
 												<div class="elementor-element elementor-element-2f241d6 e-flex e-con-boxed e-con e-parent e-lazyloaded"
 													data-id="2f241d6" data-element_type="container">
@@ -4075,6 +3205,8 @@
 														</div>
 													</div>
 												</div>
+
+												<!--FAQS-->
 												<div class="elementor-element elementor-element-4d928fb e-flex e-con-boxed e-con e-parent e-lazyloaded"
 													data-id="4d928fb" data-element_type="container">
 													<div class="e-con-inner">
@@ -4107,6 +3239,7 @@
 																		</div>
 																	</div>
 																</div>
+
 																<div class="elementor-element elementor-element-9d4e610 elementor-widget elementor-widget-pxl_text_editor"
 																	data-id="9d4e610" data-element_type="widget"
 																	data-widget_type="pxl_text_editor.default">
@@ -4115,31 +3248,14 @@
 																			class="pxl-text-editor-wrap d-flex">
 																			<div class="pxl-text-editor elementor-clearfix pxl-split-text split-in-right"
 																				style="--title_opacity: 1; --subtitle_opacity: 1;">
-																				<p style="perspective: 400px;">
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							F</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							A</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							Q</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							s</div>
-																					</div>
-																				</div>
-																				</p>
+																				<p style="perspective: 400px;">FAQs</p>
 																			</div>
 																		</div>
+
 																	</div>
 																</div>
 															</div>
+
 															<div class="elementor-element elementor-element-719b667 elementor-widget elementor-widget-pxl_heading"
 																data-id="719b667" data-element_type="widget"
 																data-widget_type="pxl_heading.default">
@@ -4149,108 +3265,11 @@
 																		<div class="pxl-heading-inner">
 																			<h1 class="heading-title pxl-split-text split-in-right"
 																				style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							A</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							n</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							y</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							d</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							o</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							u</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							b</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							t</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							s</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							?</div>
-																					</div>
-																				</div>
-																				<div class="split-line"
-																					style="display: block; text-align: start; position: relative;">
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							W</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							â€™</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							r</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							h</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							r</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							t</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							o</div>
-																					</div>
-																					<div
-																						style="position:relative;display:inline-block;">
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							h</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							e</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							l</div>
-																						<div
-																							style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-																							p</div>
-																					</div>
-																				</div>
-																			</h1>
+																				Any doubts? We're here to help</h1>
+
 																			<div class="heading-subtitle">
-																				<div class="subtitle-text ">Can't find
+																				<div class="subtitle-text ">Can't
+																					find
 																					what
 																					you're looking for?<br>
 																					Contact us here:</div>
@@ -4274,6 +3293,7 @@
 																</div>
 															</div>
 														</div>
+
 														<div class="elementor-element elementor-element-204f979 e-con-full e-flex e-con e-child"
 															data-id="204f979" data-element_type="container">
 															<div class="elementor-element elementor-element-76b7ec0 elementor-widget elementor-widget-pxl_accordion"
@@ -4288,36 +3308,36 @@
 																				<a
 																					class="ac-title d-flex align-items-center">
 																					<span class="text">How long does
-																						shipping
-																						usually take?</span>
+																						delivery usually take?</span>
 																					<span class="pxl-icon"></span>
 																				</a>
 																			</div>
 																			<div id="d3781a2pxl_accordion-76b7ec0-5585"
 																				class="ac-content"
 																				style="display:block;">
-																				Shipping typically takes 5â€“7 business
-																				days,
-																				depending on the destination and chosen
-																				service
-																				tier.</div>
+																				Delivery times depend on distance,
+																				route, and cargo type, but most local
+																				and regional road freight deliveries are
+																				completed within agreed timelines based
+																				on route planning and scheduling.</div>
 																		</div>
 																		<div class="ac-item"
 																			data-target="#4866fe0pxl_accordion-76b7ec0-5585">
 																			<div class="ac-title-wrap">
 																				<a
 																					class="ac-title d-flex align-items-center">
-																					<span class="text">What regions do
-																						you
-																						operate in?</span>
+																					<span class="text">What transport
+																						services does Prumac Connect
+																						offer?</span>
 																					<span class="pxl-icon"></span>
 																				</a>
 																			</div>
 																			<div id="4866fe0pxl_accordion-76b7ec0-5585"
-																				class="ac-content">Shipping typically
-																				takes
-																				5â€“7 business days, depending on the
-																				destination and chosen service tier.
+																				class="ac-content">Prumac Connect
+																				provides road freight transport, fuel
+																				haulage, containerized cargo movement,
+																				and regional logistics solutions across
+																				Southern Africa.
 																			</div>
 																		</div>
 																		<div class="ac-item"
@@ -4325,17 +3345,17 @@
 																			<div class="ac-title-wrap">
 																				<a
 																					class="ac-title d-flex align-items-center">
-																					<span class="text">Can I track my
-																						shipments
-																						in real-time?</span>
+																					<span class="text">Do you specialize
+																						in fuel transportation?</span>
 																					<span class="pxl-icon"></span>
 																				</a>
 																			</div>
 																			<div id="253474epxl_accordion-76b7ec0-5585"
-																				class="ac-content">Shipping typically
-																				takes
-																				5â€“7 business days, depending on the
-																				destination and chosen service tier.
+																				class="ac-content">Yes. We specialize in
+																				safe and compliant fuel transportation,
+																				using certified tankers, trained
+																				drivers, and strict safety procedures to
+																				meet industry regulations.
 																			</div>
 																		</div>
 																		<div class="ac-item"
@@ -4343,17 +3363,18 @@
 																			<div class="ac-title-wrap">
 																				<a
 																					class="ac-title d-flex align-items-center">
-																					<span class="text">What are your
-																						customer
-																						support hours?</span>
+																					<span class="text">Which regions
+																						does Prumac Connect operate
+																						in?</span>
 																					<span class="pxl-icon"></span>
 																				</a>
 																			</div>
 																			<div id="6ec2446pxl_accordion-76b7ec0-5585"
-																				class="ac-content">Shipping typically
-																				takes
-																				5â€“7 business days, depending on the
-																				destination and chosen service tier.
+																				class="ac-content">We operate throughout
+																				Zimbabwe and selected Southern African
+																				trade corridors, supporting both
+																				domestic and cross-border transport
+																				needs.
 																			</div>
 																		</div>
 																		<div class="ac-item"
@@ -4361,17 +3382,18 @@
 																			<div class="ac-title-wrap">
 																				<a
 																					class="ac-title d-flex align-items-center">
-																					<span class="text">Do you handle
-																						fragile or
-																						high-value cargo?</span>
+																					<span class="text">Can I track my
+																						cargo while it is in
+																						transit?</span>
 																					<span class="pxl-icon"></span>
 																				</a>
 																			</div>
 																			<div id="c64d559pxl_accordion-76b7ec0-5585"
-																				class="ac-content">Shipping typically
-																				takes
-																				5â€“7 business days, depending on the
-																				destination and chosen service tier.
+																				class="ac-content">Yes. Our fleet is
+																				equipped with tracking systems that
+																				allow us to monitor cargo movement and
+																				provide updates throughout the delivery
+																				process.
 																			</div>
 																		</div>
 																	</div>
@@ -4380,10 +3402,16 @@
 														</div>
 													</div>
 												</div>
-												<div class="elementor-element elementor-element-ef083ac e-con-full e-flex e-con e-parent e-lazyloaded"
+												<!--FAQS END-->
+
+												<!--Get in touch-->
+												<div id="git-cta"
+													class="elementor-element elementor-element-ef083ac e-con-full e-flex e-con e-parent e-lazyloaded"
+													style="min-height: 450px; background:url('./assets/git-bg.jpg') center/cover no-repeat;"
 													data-id="ef083ac" data-element_type="container"
 													data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-													<div style="clip-path: polygon(0% 0, 100% 0, 100% 94%, 97.5% 100%, 0 100%, 0 0%);"
+
+													<div style="clip-path: polygon(0% 0, 100% 0, 100% 94%, 97.5% 100%, 0 100%, 0 0%);background: transparent;"
 														class="elementor-element elementor-element-d7a9a8f e-flex e-con-boxed e-con e-child"
 														data-id="d7a9a8f" data-element_type="container"
 														data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -4396,375 +3424,115 @@
 																	</div>
 																</div>
 															</div>
+
 															<div class="elementor-element elementor-element-ab6645f e-con-full e-flex e-con e-child"
-																data-id="ab6645f" data-element_type="container">
-																<div class="elementor-element elementor-element-54adb2d pxl-anm-gsap elementor-widget__width-auto elementor-absolute e-transform elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-pxl_image"
-																	data-id="54adb2d" data-element_type="widget"
-																	data-settings="{&quot;pxl_animation&quot;:&quot;gsap&quot;,&quot;pxl_from_opacity&quot;:0,&quot;pxl_from_offset_x&quot;:0,&quot;pxl_from_offset_y&quot;:0,&quot;pxl_to_opacity&quot;:1,&quot;pxl_to_offset_x&quot;:32,&quot;pxl_to_offset_y&quot;:-16,&quot;pxl_once&quot;:&quot;1&quot;,&quot;pxl_animation_delay&quot;:0.200000000000000011102230246251565404236316680908203125,&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_translateX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;pxl_toggle_actions&quot;:&quot;play none none none&quot;,&quot;_transform_translateX_effect_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
-																	data-widget_type="pxl_image.default"
-																	style="translate: none; rotate: none; scale: none; transform: translate(32px, -16px); opacity: 1;">
-																	<div class="elementor-widget-container">
-																		<div id="pxl_image-54adb2d-3889"
-																			class="pxl-image-wg d-flex default">
-																			<img loading="lazy" decoding="async"
-																				width="342" height="350"
-																				src="./assets/img25-home2-1.webp"
-																				class="attachment-full size-full wp-image-3627"
-																				alt="">
-																		</div>
+																data-id="ab6645f" data-element_type="container"
+																style="position:relative; min-height:380px;">
+
+																<!-- CENTERED GROUP (LINES + PHOTO PANELS) -->
+																<div style="
+																	position:absolute;
+																	left:50%; top:50%;
+																	transform:translate(-50%,-50%);
+																	width:min(980px, 92vw);
+																	height:360px;
+																	z-index:1;
+																	pointer-events:none;
+																	">
+
+																	<!-- soft shadow behind the whole group (better than dark overlay) -->
+																	<div style="
+																		position:absolute; inset:-18px -24px;
+																		background:rgba(0,0,0,0.35);
+																		filter: blur(22px);
+																		z-index:0;
+																		"></div>
+
+																	<!-- 3 PANELS (ONE CONTINUOUS IMAGE, NO STRETCH) -->
+																	<div style="position:absolute; inset:0; z-index:1;">
+
+																		<!-- LEFT PANEL -->
+																		<div style="
+																			position:absolute;
+																			left:5%; top:0;
+																			width:32.5%;
+																			height:100%;
+																			background:url('./assets/git-2-bg.png') 0% 50% / 300% auto no-repeat;
+																			clip-path:polygon(34% 0%, 100% 0%, 66% 100%, 0% 100%);
+																		"></div>
+
+																		<!-- MIDDLE PANEL (closer gap) -->
+																		<div style="
+																			position:absolute;
+																			left:33.75%; top:0;
+																			width:32.5%;
+																			height:100%;
+																			background:url('./assets/git-2-bg.png') 50% 50% / 300% auto no-repeat;
+																			clip-path:polygon(34% 0%, 100% 0%, 66% 100%, 0% 100%);
+																		"></div>
+
+																		<!-- RIGHT PANEL -->
+																		<div style="
+																			position:absolute;
+																			right:5%; top:0;
+																			width:32.5%;
+																			height:100%;
+																			background:url('./assets/git-2-bg.png') 100% 50% / 300% auto no-repeat;
+																			clip-path:polygon(34% 0%, 100% 0%, 66% 100%, 0% 100%);
+																		"></div>
+
+																		<!-- subtle fade ONLY at the bottom (helps text without ruining image) -->
+																		<div style="
+																			position:absolute; inset:0;
+																			background:linear-gradient(to bottom, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.35) 100%);
+																			z-index:2;
+																			pointer-events:none;
+																		"></div>
 																	</div>
+
+																	<!-- LINES OVERLAY (img11) -->
+																	<img src="./assets/img11-home2.webp" alt="" style="
+																		position:absolute;
+																		left:50%; top:50%;
+																		transform:translate(-50%,-50%);
+																		width:100%;
+																		height:auto;
+																		display:block;
+																		z-index:3;
+																		opacity:0.9;
+																		">
 																</div>
-																<div class="elementor-element elementor-element-ecb04a1 pxl-anm-gsap elementor-widget__width-inherit elementor-absolute elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-pxl_image"
-																	data-id="ecb04a1" data-element_type="widget"
-																	data-settings="{&quot;pxl_animation&quot;:&quot;gsap&quot;,&quot;pxl_from_opacity&quot;:0,&quot;pxl_from_offset_x&quot;:0,&quot;pxl_from_offset_y&quot;:0,&quot;pxl_to_opacity&quot;:1,&quot;pxl_to_offset_x&quot;:22,&quot;pxl_to_offset_y&quot;:-16,&quot;pxl_once&quot;:&quot;1&quot;,&quot;pxl_animation_delay&quot;:0.5,&quot;_position&quot;:&quot;absolute&quot;,&quot;pxl_toggle_actions&quot;:&quot;play none none none&quot;}"
-																	data-widget_type="pxl_image.default"
-																	style="translate: none; rotate: none; scale: none; transform: translate(22px, -16px); opacity: 1;">
-																	<div class="elementor-widget-container">
-																		<div id="pxl_image-ecb04a1-5876"
-																			class="pxl-image-wg d-flex default">
-																			<img loading="lazy" decoding="async"
-																				width="386" height="350"
-																				src="./assets/img26-home2.webp"
-																				class="attachment-full size-full wp-image-3626"
-																				alt="">
-																		</div>
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-7fca9ad pxl-anm-gsap elementor-widget__width-inherit elementor-absolute elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-pxl_image"
-																	data-id="7fca9ad" data-element_type="widget"
-																	data-settings="{&quot;pxl_animation&quot;:&quot;gsap&quot;,&quot;pxl_from_opacity&quot;:0,&quot;pxl_from_offset_x&quot;:0,&quot;pxl_from_offset_y&quot;:0,&quot;pxl_to_opacity&quot;:1,&quot;pxl_to_offset_x&quot;:20,&quot;pxl_to_offset_y&quot;:-16,&quot;pxl_once&quot;:&quot;1&quot;,&quot;pxl_animation_delay&quot;:0.59999999999999997779553950749686919152736663818359375,&quot;_position&quot;:&quot;absolute&quot;,&quot;pxl_toggle_actions&quot;:&quot;play none none none&quot;}"
-																	data-widget_type="pxl_image.default"
-																	style="translate: none; rotate: none; scale: none; transform: translate(20px, -16px); opacity: 1;">
-																	<div class="elementor-widget-container">
-																		<div id="pxl_image-7fca9ad-2554"
-																			class="pxl-image-wg d-flex default">
-																			<img loading="lazy" decoding="async"
-																				width="453" height="350"
-																				src="./assets/img27-home2.webp"
-																				class="attachment-full size-full wp-image-3625"
-																				alt="">
-																		</div>
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-516b50e elementor-widget elementor-widget-pxl_image"
-																	data-id="516b50e" data-element_type="widget"
-																	data-settings="{&quot;position&quot;:&quot;absolute&quot;}"
-																	data-widget_type="pxl_image.default">
-																	<div class="elementor-widget-container">
-																		<div id="pxl_image-516b50e-8096"
-																			class="pxl-image-wg d-flex pxl-bg-parallax default">
-																			<div class="parallax-inner"
-																				data-parallax="{&quot;x&quot;:-80}"
-																				style="transform:translate3d(-80px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); -webkit-transform:translate3d(-80px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1); --pxl-image-bg: url(https://demo.7iquid.com/apexus/wp-content/uploads/2025/11/img23-home2.webp )">
-																			</div>
-																		</div>
-																	</div>
-																</div>
+
 															</div>
+
+
+
+
 															<div class="elementor-element elementor-element-522e72e elementor-widget elementor-widget-pxl_heading"
 																data-id="522e72e" data-element_type="widget"
 																data-settings="{&quot;title_sp_type&quot;:&quot;chars&quot;,&quot;title_sp_rotationy&quot;:90,&quot;title_sp_animation_duration&quot;:0.8000000000000000444089209850062616169452667236328125,&quot;title_sp_opacity&quot;:0}"
-																data-widget_type="pxl_heading.default">
+																data-widget_type="pxl_heading.default"
+																style="position:relative; z-index:10;">
 																<div class="elementor-widget-container">
 																	<div id="pxl-pxl_heading-522e72e-6617"
 																		class="pxl-heading-wrap d-flex">
 																		<div class="pxl-heading-inner">
 																			<h1 class="heading-title pxl-split-text pxl_title_split_text chars"
 																				style="--title_opacity: 1; --subtitle_opacity: 1; perspective: 400px;">
-																				<div class="split-line"
-																					style="display: block; text-align: center; position: relative;">
-																					<div class="split-line"
-																						style="display: block; text-align: center; position: relative;">
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										R</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										e</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										a</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										d</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										y</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										t</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										o</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										m</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										o</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										v</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										e</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="split-line"
-																					style="display: block; text-align: center; position: relative;">
-																					<div class="split-line"
-																						style="display: block; text-align: center; position: relative;">
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										s</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										m</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										a</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										r</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										t</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										e</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										r</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										a</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										n</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										d</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div style="position:relative;display:inline-block;"
-																							class="split-word">
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										f</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										a</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										s</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										t</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										e</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										r</div>
-																								</div>
-																							</div>
-																							<div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"
-																								class="split-char">
-																								<div
-																									style="position:relative;display:inline-block;">
-																									<div
-																										style="position:relative;display:inline-block;">
-																										?</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</h1>
+																				Ready to move smarter and faster?</h1>
+
 																			<div class="heading-subtitle">
-																				<div class="subtitle-text ">Talk to our
+																				<div class="subtitle-text ">Talk to
+																					our
 																					experts
 																					and get a tailored logistics
 																					solution.</div>
 																			</div>
 																		</div>
 																	</div>
-
 																</div>
 															</div>
+
 															<div class="elementor-element elementor-element-d3a825c elementor-align-center pxl-anm-pxl_fadeInUp elementor-widget elementor-widget-pxl_button pxl-animated pxl_fadeInUp"
 																data-id="d3a825c" data-element_type="widget"
 																data-settings="{&quot;pxl_animation&quot;:&quot;pxl_fadeInUp&quot;,&quot;pxl_animation_duration&quot;:0.8000000000000000444089209850062616169452667236328125}"
@@ -4775,38 +3543,18 @@
 																		<a href="https://demo.7iquid.com/apexus/contact/"
 																			class="pxl-btn btn-third icon-ps-right"
 																			data-text="Get in Touch">
-																			<span class="pxl-button-text"><span
-																					class="letter"
-																					style="animation-delay: 0s;">G</span><span
-																					class="letter"
-																					style="animation-delay: 0.045s;">e</span><span
-																					class="letter"
-																					style="animation-delay: 0.09s;">t</span><span
-																					class="letter"
-																					style="animation-delay: 0.135s;">&nbsp;</span><span
-																					class="letter"
-																					style="animation-delay: 0.18s;">i</span><span
-																					class="letter"
-																					style="animation-delay: 0.225s;">n</span><span
-																					class="letter"
-																					style="animation-delay: 0.27s;">&nbsp;</span><span
-																					class="letter"
-																					style="animation-delay: 0.315s;">T</span><span
-																					class="letter"
-																					style="animation-delay: 0.36s;">o</span><span
-																					class="letter"
-																					style="animation-delay: 0.405s;">u</span><span
-																					class="letter"
-																					style="animation-delay: 0.45s;">c</span><span
-																					class="letter"
-																					style="animation-delay: 0.495s;">h</span></span>
+																			<span class="pxl-button-text">Get in
+																				Touch</span>
 																		</a>
+
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
+
+
 												<div style="clip-path: polygon(0% 0, 100% 0, 100% 94%, 97.5% 100%, 0 100%, 0 0%);"
 													class="elementor-element elementor-element-613369c e-flex e-con-boxed e-con e-parent e-lazyloaded"
 													data-id="613369c" data-element_type="container"
